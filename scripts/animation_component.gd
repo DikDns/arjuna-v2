@@ -1,7 +1,7 @@
 class_name AnimationComponent extends Node
 
-@export var hover_scale: Vector2 = Vector2(1.1, 1.1)
-@export var pressed_scale: Vector2 = Vector2(0.9, 0.9)
+@export var hover_scale: Vector2 = Vector2(1.05, 1.05)
+@export var pressed_scale: Vector2 = Vector2(0.95, 0.95)
 @export var animation_speed: float = 0.5
 @export var is_center_pivot: bool = true
 @export var auto_connect: bool = true

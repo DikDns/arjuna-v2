@@ -1,0 +1,298 @@
+[gd_scene load_steps=17 format=3 uid="uid://bnydhp0shk2qc"]
+
+[ext_resource type="Script" uid="uid://bjumwav4g2uc" path="res://scripts/materi_detail_controller_new.gd" id="1_kg1f4"]
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="2_apipl"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="3_3qov2"]
+[ext_resource type="Texture2D" uid="uid://cmb651k14sg6c" path="res://assets/materi/papan-judul-bg.png" id="4_iaoul"]
+[ext_resource type="FontFile" uid="uid://d0cntpqh4f8fs" path="res://assets/fonts/poppins/Poppins-Bold.ttf" id="5_b0dfe"]
+[ext_resource type="StyleBox" uid="uid://cgrycnk4vedyo" path="res://Styles/card-bg-white.tres" id="6_b0dfe"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="6_ooy86"]
+[ext_resource type="Texture2D" uid="uid://cyf6g1beau3c2" path="res://assets/materi/banjir/penyebab/penebangan liar.jpg" id="7_7pgyf"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="7_b0jn2"]
+[ext_resource type="FontFile" uid="uid://b2otwppn1ke7i" path="res://assets/fonts/poppins/Poppins-Regular.ttf" id="8_8nxye"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="8_xswv2"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="9_8icbk"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="10_k55rd"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="11_g6xi1"]
+[ext_resource type="Texture2D" uid="uid://qgucs1sb4okk" path="res://assets/icons/back.png" id="16_gdgci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0dfe"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.419608, 0.419608, 1)
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.690196, 0.294118, 0.294118, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Materi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kg1f4")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999958
+anchor_bottom = 1.00028
+offset_right = 0.0479736
+offset_bottom = -0.184021
+color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="bgtexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -80.0
+offset_right = 320.826
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("2_apipl")
+expand_mode = 3
+
+[node name="papan" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 23.0
+offset_right = 256.0
+offset_bottom = 127.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("3_3qov2")
+
+[node name="bg" type="TextureRect" parent="papan"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_iaoul")
+expand_mode = 2
+
+[node name="heading" type="Label" parent="papan"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("5_b0dfe")
+theme_override_font_sizes/font_size = 40
+text = "Penyebab Gempa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="card" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -509.0
+offset_top = -182.0
+offset_right = 514.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("6_b0dfe")
+
+[node name="bg" type="TextureRect" parent="card"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -112.0
+offset_right = 279.0
+offset_bottom = 112.0
+grow_vertical = 2
+texture = ExtResource("7_7pgyf")
+expand_mode = 2
+
+[node name="heading" type="Label" parent="card"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -579.0
+offset_top = 30.0
+offset_right = -209.0
+offset_bottom = 85.6667
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.894118, 0.933333, 0.984314, 1)
+theme_override_fonts/font = ExtResource("5_b0dfe")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_b0dfe")
+text = "Peledakan Gunung Api"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="paragraph" type="Label" parent="card"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -678.0
+offset_top = -76.0
+offset_right = -92.0
+offset_bottom = 155.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_8nxye")
+theme_override_font_sizes/font_size = 16
+text = "lorem"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="buttons" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -510.0
+offset_top = -120.0
+offset_right = 510.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("3_3qov2")
+
+[node name="ButtonSebelumnya" type="Button" parent="buttons"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -39.0
+offset_right = 274.0
+offset_bottom = 39.0
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.7334, 0.76, 0.722, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("6_ooy86")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("7_b0jn2")
+theme_override_styles/disabled_mirrored = ExtResource("8_xswv2")
+theme_override_styles/disabled = ExtResource("8_xswv2")
+theme_override_styles/hover_pressed_mirrored = ExtResource("9_8icbk")
+theme_override_styles/hover_pressed = ExtResource("9_8icbk")
+theme_override_styles/hover_mirrored = ExtResource("9_8icbk")
+theme_override_styles/hover = ExtResource("9_8icbk")
+theme_override_styles/pressed_mirrored = ExtResource("7_b0jn2")
+theme_override_styles/pressed = ExtResource("7_b0jn2")
+theme_override_styles/normal_mirrored = ExtResource("10_k55rd")
+theme_override_styles/normal = ExtResource("10_k55rd")
+disabled = true
+text = "Sebelumnya"
+
+[node name="AnimationComponent4" type="Node" parent="buttons/ButtonSebelumnya"]
+script = ExtResource("11_g6xi1")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="ButtonSelanjutnya" type="Button" parent="buttons"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -39.0
+offset_bottom = 39.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.7334, 0.76, 0.722, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("6_ooy86")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("7_b0jn2")
+theme_override_styles/disabled_mirrored = ExtResource("8_xswv2")
+theme_override_styles/disabled = ExtResource("8_xswv2")
+theme_override_styles/hover_pressed_mirrored = ExtResource("9_8icbk")
+theme_override_styles/hover_pressed = ExtResource("9_8icbk")
+theme_override_styles/hover_mirrored = ExtResource("9_8icbk")
+theme_override_styles/hover = ExtResource("9_8icbk")
+theme_override_styles/pressed_mirrored = ExtResource("7_b0jn2")
+theme_override_styles/pressed = ExtResource("7_b0jn2")
+theme_override_styles/normal_mirrored = ExtResource("10_k55rd")
+theme_override_styles/normal = ExtResource("10_k55rd")
+disabled = true
+text = "Selanjutnya"
+
+[node name="AnimationComponent4" type="Node" parent="buttons/ButtonSelanjutnya"]
+script = ExtResource("11_g6xi1")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 4
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("6_ooy86")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("7_b0jn2")
+theme_override_styles/disabled_mirrored = ExtResource("8_xswv2")
+theme_override_styles/disabled = ExtResource("8_xswv2")
+theme_override_styles/hover_pressed_mirrored = ExtResource("9_8icbk")
+theme_override_styles/hover_pressed = ExtResource("9_8icbk")
+theme_override_styles/hover_mirrored = ExtResource("9_8icbk")
+theme_override_styles/hover = ExtResource("9_8icbk")
+theme_override_styles/pressed_mirrored = ExtResource("7_b0jn2")
+theme_override_styles/pressed = ExtResource("7_b0jn2")
+theme_override_styles/normal_mirrored = ExtResource("10_k55rd")
+theme_override_styles/normal = ExtResource("10_k55rd")
+icon = ExtResource("16_gdgci")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationComponent4" type="Node" parent="BackButton"]
+script = ExtResource("11_g6xi1")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[connection signal="pressed" from="buttons/ButtonSebelumnya" to="." method="_on_button_sebelumnya_pressed"]
+[connection signal="pressed" from="buttons/ButtonSelanjutnya" to="." method="_on_button_selanjutnya_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

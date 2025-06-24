@@ -6,15 +6,27 @@ class_name GameController extends Node
 
 var current_3d_scene
 var current_2d_scene
-var current_gui_scene
-
-var scene_history: Array[String] = []
+var current_gui_scene: Control
+var current_materi_type: Global.MATERI_TYPE
+var current_materi_section: String = ""
 
 func _ready() -> void:
 	Global.game_controller = self
 	current_gui_scene = $GUI/MateriMenu
+
+func change_gui_scene(new_scene: String, materi_type: Global.MATERI_TYPE, section_or_delete = true, keep_running = false) -> void:
+	print("current_gui_scene")
+	print(current_gui_scene)
+	current_materi_type = materi_type
 	
-func change_gui_scene(new_scene: String, delete = true, keep_running = false) -> void:
+	# Check if section_or_delete is a string (section name) or boolean (delete flag)
+	var delete = true
+	if section_or_delete is String:
+		current_materi_section = section_or_delete
+		delete = false
+	else:
+		delete = section_or_delete
+
 	if current_gui_scene != null:
 		if delete:
 			current_gui_scene.queue_free()
@@ -24,14 +36,7 @@ func change_gui_scene(new_scene: String, delete = true, keep_running = false) ->
 			gui.remove_child(current_gui_scene)
 	var new = load(new_scene).instantiate()
 	gui.add_child(new)
-	scene_history.push_back(new_scene)
 	current_gui_scene = new
-
-func go_back(delete = true, keep_running = false)-> void:
-	if scene_history.size() > 0:
-		change_gui_scene(scene_history.pop_back(), delete, keep_running)
-	else:
-		print('No Screen')
 
 func change_2d_scene(new_scene: String, delete = true, keep_running = false) -> void:
 	if current_2d_scene != null:
@@ -55,4 +60,4 @@ func change_3d_scene(new_scene: String, delete = true, keep_running = false) -> 
 			world_3d.remove_child(current_3d_scene)
 	var new = load(new_scene).instantiate()
 	world_3d.add_child(new)
-	current_gui_scene = new
+	current_3d_scene = new

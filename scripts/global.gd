@@ -1,5 +1,12 @@
 extends Node
 
+enum MATERI_TYPE {
+	GEMPA = 0,
+	LONGSOR = 1,
+	BANJIR = 2
+}
+
+var game_controller: GameController
 var scenes_history: Array[String]
 var save_path = OS.get_user_data_dir() + "/arjuna_data.cfg"
 
