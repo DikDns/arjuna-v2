@@ -1,0 +1,947 @@
+[gd_scene load_steps=27 format=3 uid="uid://baxvq4v52rnwe"]
+
+[ext_resource type="Script" uid="uid://cimgv1ply1x1m" path="res://scripts/rambu_game.gd" id="1_rnmcx"]
+[ext_resource type="Texture2D" uid="uid://cra57kolub8na" path="res://assets/rambu/bg.png" id="2_08ywm"]
+[ext_resource type="Script" uid="uid://2yeto6ahdk8n" path="res://scripts/back_button.gd" id="2_lfcsi"]
+[ext_resource type="Texture2D" uid="uid://cxrgxjxgb67js" path="res://assets/rambu/tsunami.png" id="3_08ywm"]
+[ext_resource type="Texture2D" uid="uid://24a48rr2j4fr" path="res://assets/rambu/kayu.png" id="3_30ut1"]
+[ext_resource type="Texture2D" uid="uid://cbiuc6istj6oh" path="res://assets/rambu/longsor.png" id="4_30ut1"]
+[ext_resource type="Texture2D" uid="uid://wall4147gsb4" path="res://assets/rambu/rambu-slot.png" id="4_86jcx"]
+[ext_resource type="Texture2D" uid="uid://cmax4m738ogmd" path="res://assets/rambu/bg-awan.png" id="5_3rohj"]
+[ext_resource type="Texture2D" uid="uid://c3jt8j5ghwetn" path="res://assets/rambu/banjir.png" id="5_rrec4"]
+[ext_resource type="Texture2D" uid="uid://glpbrj4fm8bd" path="res://assets/rambu/gempa.png" id="6_86jcx"]
+[ext_resource type="Texture2D" uid="uid://ccp3s607knxxh" path="res://assets/rambu/gunung_meletus.png" id="7_3rohj"]
+[ext_resource type="FontFile" uid="uid://d0cntpqh4f8fs" path="res://assets/fonts/poppins/Poppins-Bold.ttf" id="8_30ut1"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="9_rrec4"]
+[ext_resource type="Texture2D" uid="uid://cmb651k14sg6c" path="res://assets/materi/papan-judul-bg.png" id="10_86jcx"]
+[ext_resource type="FontFile" uid="uid://cwm6wp0xq132v" path="res://assets/fonts/poppins/Poppins-Medium.ttf" id="11_3rohj"]
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="12_oi2wk"]
+[ext_resource type="Texture2D" uid="uid://cuoxj1qc7w65b" path="res://assets/simulasi/papan-selamat.png" id="13_etekx"]
+[ext_resource type="Texture2D" uid="uid://eyapgs668iug" path="res://assets/brands/arjuna-2.png" id="14_k1phw"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="15_r60ep"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="16_j2tbf"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="17_g7dwc"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="18_nde12"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="19_2hj6v"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="20_2p0ro"]
+[ext_resource type="Texture2D" uid="uid://qgucs1sb4okk" path="res://assets/icons/back.png" id="21_k42lu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fce1"]
+bg_color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="RambuGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rnmcx")
+
+[node name="bg-texture2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = -50.0
+offset_right = 259.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("2_08ywm")
+expand_mode = 3
+
+[node name="Kayu" type="TextureRect" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -208.5
+offset_top = -140.0
+offset_right = 208.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_30ut1")
+expand_mode = 2
+
+[node name="descriptions_group" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("9_rrec4")
+
+[node name="GunungMeletus" type="Panel" parent="descriptions_group"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.0
+offset_top = 135.0
+offset_right = -458.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RambuSlot" type="TextureRect" parent="descriptions_group/GunungMeletus"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = -158.0
+offset_right = 151.0
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_86jcx")
+expand_mode = 2
+
+[node name="awan1" type="TextureRect" parent="descriptions_group/GunungMeletus"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -74.0
+offset_right = 150.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3rohj")
+expand_mode = 2
+
+[node name="text" type="Label" parent="descriptions_group/GunungMeletus"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -35.5
+offset_right = 180.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 20
+text = "Kawasan Rawan 
+Bencana Gunung Api"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tsunami" type="Panel" parent="descriptions_group"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 473.0
+offset_top = 135.0
+offset_right = 513.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RambuSlot" type="TextureRect" parent="descriptions_group/Tsunami"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = -158.0
+offset_right = 151.0
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_86jcx")
+expand_mode = 2
+
+[node name="awan1" type="TextureRect" parent="descriptions_group/Tsunami"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -74.0
+offset_right = 150.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3rohj")
+expand_mode = 2
+
+[node name="text" type="Label" parent="descriptions_group/Tsunami"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -35.5
+offset_right = 180.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 20
+text = "Kawasan Rawan 
+Bencana Tsunami"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gempa" type="Panel" parent="descriptions_group"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -41.0
+offset_right = -231.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RambuSlot" type="TextureRect" parent="descriptions_group/Gempa"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = -158.0
+offset_right = 151.0
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_86jcx")
+expand_mode = 2
+
+[node name="awan1" type="TextureRect" parent="descriptions_group/Gempa"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -74.0
+offset_right = 150.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3rohj")
+expand_mode = 2
+
+[node name="text" type="Label" parent="descriptions_group/Gempa"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -35.5
+offset_right = 180.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 20
+text = "Kawasan Rawan 
+Bencana Gempa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Longsor" type="Panel" parent="descriptions_group"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 93.0
+offset_right = 22.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RambuSlot" type="TextureRect" parent="descriptions_group/Longsor"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = -158.0
+offset_right = 151.0
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_86jcx")
+expand_mode = 2
+
+[node name="awan1" type="TextureRect" parent="descriptions_group/Longsor"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -74.0
+offset_right = 150.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3rohj")
+expand_mode = 2
+
+[node name="text" type="Label" parent="descriptions_group/Longsor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -35.5
+offset_right = 180.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 20
+text = "Kawasan Rawan 
+Bencana Longsor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Banjir" type="Panel" parent="descriptions_group"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 234.0
+offset_top = -35.0
+offset_right = 274.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RambuSlot" type="TextureRect" parent="descriptions_group/Banjir"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = -158.0
+offset_right = 151.0
+offset_bottom = 28.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_86jcx")
+expand_mode = 2
+
+[node name="awan1" type="TextureRect" parent="descriptions_group/Banjir"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -74.0
+offset_right = 150.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3rohj")
+expand_mode = 2
+
+[node name="text" type="Label" parent="descriptions_group/Banjir"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -35.5
+offset_right = 180.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 20
+text = "Kawasan Rawan 
+Bencana Banjir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="rambu_groups" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -174.0
+offset_right = 199.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("9_rrec4")
+
+[node name="Gempa" type="TextureButton" parent="rambu_groups"]
+texture_filter = 2
+offset_left = -193.0
+offset_top = -149.0
+offset_right = 319.0
+offset_bottom = 397.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(256, 273)
+texture_normal = ExtResource("6_86jcx")
+texture_pressed = ExtResource("6_86jcx")
+texture_hover = ExtResource("6_86jcx")
+texture_disabled = ExtResource("6_86jcx")
+texture_focused = ExtResource("6_86jcx")
+stretch_mode = 0
+
+[node name="AnimationComponent4" type="Node" parent="rambu_groups/Gempa"]
+script = ExtResource("20_2p0ro")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Tsunami" type="TextureButton" parent="rambu_groups"]
+texture_filter = 2
+offset_left = -124.0
+offset_top = -211.0
+offset_right = 388.0
+offset_bottom = 335.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(256, 273)
+texture_normal = ExtResource("3_08ywm")
+texture_pressed = ExtResource("3_08ywm")
+texture_hover = ExtResource("3_08ywm")
+texture_disabled = ExtResource("3_08ywm")
+texture_focused = ExtResource("3_08ywm")
+stretch_mode = 0
+
+[node name="AnimationComponent4" type="Node" parent="rambu_groups/Tsunami"]
+script = ExtResource("20_2p0ro")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Banjir" type="TextureButton" parent="rambu_groups"]
+texture_filter = 2
+offset_left = -58.0001
+offset_top = -145.0
+offset_right = 454.0
+offset_bottom = 401.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(256, 273)
+texture_normal = ExtResource("5_rrec4")
+texture_pressed = ExtResource("5_rrec4")
+texture_hover = ExtResource("5_rrec4")
+texture_disabled = ExtResource("5_rrec4")
+texture_focused = ExtResource("5_rrec4")
+stretch_mode = 0
+
+[node name="AnimationComponent4" type="Node" parent="rambu_groups/Banjir"]
+script = ExtResource("20_2p0ro")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Longsor" type="TextureButton" parent="rambu_groups"]
+texture_filter = 2
+offset_left = 9.99995
+offset_top = -210.0
+offset_right = 522.0
+offset_bottom = 346.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(256, 278)
+texture_normal = ExtResource("4_30ut1")
+texture_pressed = ExtResource("4_30ut1")
+texture_hover = ExtResource("4_30ut1")
+texture_disabled = ExtResource("4_30ut1")
+texture_focused = ExtResource("4_30ut1")
+stretch_mode = 0
+
+[node name="AnimationComponent4" type="Node" parent="rambu_groups/Longsor"]
+script = ExtResource("20_2p0ro")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="GunungMeletus" type="TextureButton" parent="rambu_groups"]
+texture_filter = 2
+offset_left = 45.0
+offset_top = -145.0
+offset_right = 615.0
+offset_bottom = 401.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(285, 273)
+texture_normal = ExtResource("7_3rohj")
+texture_pressed = ExtResource("7_3rohj")
+texture_hover = ExtResource("7_3rohj")
+texture_disabled = ExtResource("7_3rohj")
+texture_focused = ExtResource("7_3rohj")
+stretch_mode = 0
+
+[node name="AnimationComponent4" type="Node" parent="rambu_groups/GunungMeletus"]
+script = ExtResource("20_2p0ro")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 113.0
+offset_right = 130.0
+offset_bottom = 136.0
+grow_horizontal = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 16
+text = "Pasangkan rambu ke deskripsi yang sesuai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("9_rrec4")
+
+[node name="TextureRect" type="TextureRect" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_86jcx")
+expand_mode = 2
+
+[node name="CurrentTimeHeading" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("11_3rohj")
+theme_override_font_sizes/font_size = 16
+text = "Waktu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -10.0
+offset_right = 7.0
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 32
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel2" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 87.0
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 32
+text = "detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.609
+offset_right = 142.609
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2fce1")
+
+[node name="bg-texture2" type="TextureRect" parent="ResultPanel"]
+layout_mode = 2
+texture = ExtResource("12_oi2wk")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="ResultPanel"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("9_rrec4")
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.609
+offset_top = 39.0
+offset_right = 208.391
+offset_bottom = 179.0
+grow_horizontal = 2
+texture = ExtResource("13_etekx")
+expand_mode = 2
+
+[node name="Arjuna1" type="Panel" parent="ResultPanel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -118.0
+offset_bottom = -118.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/Arjuna1"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0305
+offset_top = -109.0
+offset_right = 89.0305
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_k1phw")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultPanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = 102.0
+offset_right = 322.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BestTimePanel" type="Panel" parent="ResultPanel/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("9_rrec4")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_86jcx")
+expand_mode = 2
+
+[node name="BestTimeHeading" type="Label" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("11_3rohj")
+theme_override_font_sizes/font_size = 16
+text = "Waktu terbaik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestTimeLabel" type="Label" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.391
+offset_top = -10.0
+offset_right = 129.609
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 32
+text = "0.00 detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimePanel" type="Panel" parent="ResultPanel/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("9_rrec4")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_86jcx")
+expand_mode = 2
+
+[node name="CurrentTimeHeading" type="Label" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("11_3rohj")
+theme_override_font_sizes/font_size = 16
+text = "Selesai dalam"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimeLabel" type="Label" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.391
+offset_top = -10.0
+offset_right = 129.609
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 32
+text = "0.00 detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="ResultPanel/Panel"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.609
+offset_top = -145.0
+offset_right = 123.391
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("15_r60ep")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("16_j2tbf")
+theme_override_styles/disabled_mirrored = ExtResource("17_g7dwc")
+theme_override_styles/disabled = ExtResource("17_g7dwc")
+theme_override_styles/hover_pressed_mirrored = ExtResource("18_nde12")
+theme_override_styles/hover_pressed = ExtResource("18_nde12")
+theme_override_styles/hover_mirrored = ExtResource("18_nde12")
+theme_override_styles/hover = ExtResource("18_nde12")
+theme_override_styles/pressed_mirrored = ExtResource("16_j2tbf")
+theme_override_styles/pressed = ExtResource("16_j2tbf")
+theme_override_styles/normal_mirrored = ExtResource("19_2hj6v")
+theme_override_styles/normal = ExtResource("19_2hj6v")
+text = "Main Lagi"
+
+[node name="AnimationComponent3" type="Node" parent="ResultPanel/Panel/RestartButton"]
+script = ExtResource("20_2p0ro")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Heading" type="Label" parent="ResultPanel/Panel"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -14.0
+offset_right = 424.0
+offset_bottom = 31.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_30ut1")
+theme_override_font_sizes/font_size = 32
+text = "Kamu berhasil menyelesaikan permainan."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 4
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("15_r60ep")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("16_j2tbf")
+theme_override_styles/disabled_mirrored = ExtResource("17_g7dwc")
+theme_override_styles/disabled = ExtResource("17_g7dwc")
+theme_override_styles/hover_pressed_mirrored = ExtResource("18_nde12")
+theme_override_styles/hover_pressed = ExtResource("18_nde12")
+theme_override_styles/hover_mirrored = ExtResource("18_nde12")
+theme_override_styles/hover = ExtResource("18_nde12")
+theme_override_styles/pressed_mirrored = ExtResource("16_j2tbf")
+theme_override_styles/pressed = ExtResource("16_j2tbf")
+theme_override_styles/normal_mirrored = ExtResource("19_2hj6v")
+theme_override_styles/normal = ExtResource("19_2hj6v")
+icon = ExtResource("21_k42lu")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_lfcsi")
+
+[node name="AnimationComponent4" type="Node" parent="BackButton"]
+script = ExtResource("20_2p0ro")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"

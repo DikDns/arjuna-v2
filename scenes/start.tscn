@@ -1,0 +1,539 @@
+[gd_scene load_steps=27 format=3 uid="uid://btokob0ir5kcb"]
+
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="1_8itgj"]
+[ext_resource type="Script" uid="uid://b87o6y357lmnk" path="res://scripts/start-script.gd" id="1_hp05y"]
+[ext_resource type="Script" uid="uid://cr2p63hsb3ned" path="res://scripts/start_button.gd" id="1_jaeev"]
+[ext_resource type="Script" uid="uid://d2dvsk5i048kw" path="res://scripts/exit_button.gd" id="1_u80x2"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="2_0auqf"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="2_m8nf6"]
+[ext_resource type="Texture2D" uid="uid://uicsq65t2fo" path="res://assets/brands/ARJUNA.png" id="2_tn317"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="3_4ge6i"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="3_8itgj"]
+[ext_resource type="Texture2D" uid="uid://euiussr8cgj3" path="res://assets/brands/mitigasi-game-label.png" id="3_gsp51"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="3_y16t7"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="4_1nvso"]
+[ext_resource type="Texture2D" uid="uid://djrosiq2hktie" path="res://assets/icons/exit-app.png" id="10_pgjjs"]
+[ext_resource type="Texture2D" uid="uid://eyapgs668iug" path="res://assets/brands/arjuna-2.png" id="12_1nvso"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="12_71xtm"]
+[ext_resource type="Texture2D" uid="uid://0e1px75k4f85" path="res://assets/icons/info-i.png" id="14_r8uic"]
+[ext_resource type="Texture2D" uid="uid://bl0jcij2x2e8t" path="res://assets/icons/question-mark.png" id="15_n0tym"]
+[ext_resource type="Texture2D" uid="uid://cjii4gaqpu46i" path="res://assets/icons/settings.png" id="15_x1pfr"]
+[ext_resource type="StyleBox" uid="uid://bukmx3wabmg1p" path="res://Styles/popup-bg.tres" id="17_8jfef"]
+[ext_resource type="Texture2D" uid="uid://bc3qeb33ajnmq" path="res://assets/icons/x.png" id="18_qfvu4"]
+[ext_resource type="Texture2D" uid="uid://uqojju2mjma6" path="res://assets/icons/x-pressed.png" id="19_aox1m"]
+[ext_resource type="FontFile" uid="uid://d0cntpqh4f8fs" path="res://assets/fonts/poppins/Poppins-Bold.ttf" id="19_g3i1d"]
+[ext_resource type="Texture2D" uid="uid://dpdlocw40fd5i" path="res://assets/icons/x-hover.png" id="20_hp05y"]
+[ext_resource type="Texture2D" uid="uid://cj3wye41ku8lt" path="res://assets/icons/switch-active.png" id="23_b1pjr"]
+[ext_resource type="Texture2D" uid="uid://nu8lth4n6o1f" path="res://assets/icons/switch.png" id="24_71xtm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp05y"]
+bg_color = Color(0.290196, 0.564706, 0.886275, 1)
+border_width_bottom = 8
+border_color = Color(0.219608, 0.423529, 0.666667, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hp05y")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999958
+anchor_bottom = 1.00028
+offset_right = 0.0479736
+offset_bottom = -0.184021
+color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="bg-texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -238.0
+offset_top = -60.0
+offset_right = 263.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("1_8itgj")
+expand_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -26.0
+offset_right = 77.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_m8nf6")
+
+[node name="Panel3" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Panel3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.952
+offset_top = -130.0
+offset_right = 220.953
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gsp51")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.15
+theme_override_styles/panel = ExtResource("2_m8nf6")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Panel"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.5
+offset_top = -42.5
+offset_right = 252.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tn317")
+expand_mode = 2
+
+[node name="Panel2" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+size_flags_stretch_ratio = 3.15
+theme_override_styles/panel = ExtResource("2_m8nf6")
+
+[node name="StartButton" type="Button" parent="PanelContainer/Panel2"]
+texture_filter = 2
+layout_mode = 2
+offset_left = -166.0
+offset_top = -8.0
+offset_right = 166.0
+offset_bottom = 70.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("4_1nvso")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("2_0auqf")
+theme_override_styles/disabled_mirrored = ExtResource("3_8itgj")
+theme_override_styles/disabled = ExtResource("3_8itgj")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover_pressed = ExtResource("3_4ge6i")
+theme_override_styles/hover_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover = ExtResource("3_4ge6i")
+theme_override_styles/pressed_mirrored = ExtResource("2_0auqf")
+theme_override_styles/pressed = ExtResource("2_0auqf")
+theme_override_styles/normal_mirrored = ExtResource("3_y16t7")
+theme_override_styles/normal = ExtResource("3_y16t7")
+text = "Mulai"
+script = ExtResource("1_jaeev")
+
+[node name="AnimationComponent" type="Node" parent="PanelContainer/Panel2/StartButton"]
+script = ExtResource("12_71xtm")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+texture_normal = ExtResource("10_pgjjs")
+texture_pressed = ExtResource("10_pgjjs")
+texture_hover = ExtResource("10_pgjjs")
+texture_disabled = ExtResource("10_pgjjs")
+texture_focused = ExtResource("10_pgjjs")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_u80x2")
+
+[node name="AnimationComponent" type="Node" parent="ExitButton"]
+script = ExtResource("12_71xtm")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Arjuna1" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Arjuna1"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -178.061
+offset_top = -109.0
+offset_right = -300.0
+offset_bottom = 109.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("12_1nvso")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Arjuna2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Arjuna2"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.818
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -109.0
+offset_right = 178.061
+offset_bottom = 109.0
+grow_vertical = 2
+texture = ExtResource("12_1nvso")
+expand_mode = 3
+stretch_mode = 5
+flip_h = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_constants/separation = 32
+
+[node name="Panel3" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_m8nf6")
+
+[node name="SettingsButton" type="Button" parent="HBoxContainer/Panel3"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("4_1nvso")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("2_0auqf")
+theme_override_styles/disabled_mirrored = ExtResource("3_8itgj")
+theme_override_styles/disabled = ExtResource("3_8itgj")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover_pressed = ExtResource("3_4ge6i")
+theme_override_styles/hover_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover = ExtResource("3_4ge6i")
+theme_override_styles/pressed_mirrored = ExtResource("2_0auqf")
+theme_override_styles/pressed = ExtResource("2_0auqf")
+theme_override_styles/normal_mirrored = ExtResource("3_y16t7")
+theme_override_styles/normal = ExtResource("3_y16t7")
+icon = ExtResource("15_x1pfr")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationComponent" type="Node" parent="HBoxContainer/Panel3/SettingsButton"]
+script = ExtResource("12_71xtm")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_m8nf6")
+
+[node name="InfoButton" type="Button" parent="HBoxContainer/Panel"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("4_1nvso")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("2_0auqf")
+theme_override_styles/disabled_mirrored = ExtResource("3_8itgj")
+theme_override_styles/disabled = ExtResource("3_8itgj")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover_pressed = ExtResource("3_4ge6i")
+theme_override_styles/hover_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover = ExtResource("3_4ge6i")
+theme_override_styles/pressed_mirrored = ExtResource("2_0auqf")
+theme_override_styles/pressed = ExtResource("2_0auqf")
+theme_override_styles/normal_mirrored = ExtResource("3_y16t7")
+theme_override_styles/normal = ExtResource("3_y16t7")
+icon = ExtResource("14_r8uic")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationComponent" type="Node" parent="HBoxContainer/Panel/InfoButton"]
+script = ExtResource("12_71xtm")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Panel2" type="Panel" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_m8nf6")
+
+[node name="HelpButton" type="Button" parent="HBoxContainer/Panel2"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("4_1nvso")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("2_0auqf")
+theme_override_styles/disabled_mirrored = ExtResource("3_8itgj")
+theme_override_styles/disabled = ExtResource("3_8itgj")
+theme_override_styles/hover_pressed_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover_pressed = ExtResource("3_4ge6i")
+theme_override_styles/hover_mirrored = ExtResource("3_4ge6i")
+theme_override_styles/hover = ExtResource("3_4ge6i")
+theme_override_styles/pressed_mirrored = ExtResource("2_0auqf")
+theme_override_styles/pressed = ExtResource("2_0auqf")
+theme_override_styles/normal_mirrored = ExtResource("3_y16t7")
+theme_override_styles/normal = ExtResource("3_y16t7")
+icon = ExtResource("15_n0tym")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationComponent" type="Node" parent="HBoxContainer/Panel2/HelpButton"]
+script = ExtResource("12_71xtm")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PopUpContainer" type="PanelContainer" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -260.0
+offset_right = 512.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("17_8jfef")
+
+[node name="Panel" type="Panel" parent="SettingsPanel/PopUpContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_m8nf6")
+
+[node name="Panel2" type="Panel" parent="SettingsPanel/PopUpContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -221.0
+offset_top = -31.0
+offset_right = 221.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hp05y")
+
+[node name="Label" type="Label" parent="SettingsPanel/PopUpContainer/Panel/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -11.5
+offset_right = 191.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("19_g3i1d")
+theme_override_font_sizes/font_size = 32
+text = "Pengaturan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="SettingsPanel/PopUpContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Label2" type="Label" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.101961, 0.196078, 0.309804, 1)
+theme_override_fonts/font = ExtResource("19_g3i1d")
+theme_override_font_sizes/font_size = 32
+text = "Musik"
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_icons/checked = ExtResource("23_b1pjr")
+theme_override_icons/unchecked = ExtResource("24_71xtm")
+button_pressed = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Label3" type="Label" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.101961, 0.196078, 0.309804, 1)
+theme_override_fonts/font = ExtResource("19_g3i1d")
+theme_override_font_sizes/font_size = 32
+text = "Mode Disabilitas"
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_icons/checked = ExtResource("23_b1pjr")
+theme_override_icons/unchecked = ExtResource("24_71xtm")
+
+[node name="XButton" type="TextureButton" parent="SettingsPanel/PopUpContainer/Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 96.0
+texture_normal = ExtResource("18_qfvu4")
+texture_pressed = ExtResource("19_aox1m")
+texture_hover = ExtResource("20_hp05y")
+texture_disabled = ExtResource("18_qfvu4")
+texture_focused = ExtResource("19_aox1m")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimationComponent" type="Node" parent="SettingsPanel/PopUpContainer/Panel/XButton"]
+script = ExtResource("12_71xtm")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[connection signal="pressed" from="HBoxContainer/Panel3/SettingsButton" to="." method="_settings_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/PopUpContainer/Panel/XButton" to="." method="_x_button_pressed"]

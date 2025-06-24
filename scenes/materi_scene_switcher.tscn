@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn3iow0worj31"]
+
+[ext_resource type="Script" uid="uid://dpfsunerreb2a" path="res://scripts/game_controller.gd" id="1_mnigu"]
+[ext_resource type="PackedScene" uid="uid://4wepppfahald" path="res://scenes/materi_menu.tscn" id="2_x7qee"]
+
+[node name="SceneSwitcher" type="Node"]
+script = ExtResource("1_mnigu")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MateriMenu" parent="GUI" instance=ExtResource("2_x7qee")]
+layout_mode = 1

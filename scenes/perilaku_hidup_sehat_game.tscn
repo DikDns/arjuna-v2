@@ -1,0 +1,1176 @@
+[gd_scene load_steps=37 format=3 uid="uid://dpmp2j20nmghn"]
+
+[ext_resource type="Script" uid="uid://d2clsmexj0hyj" path="res://scripts/perilaku_hidup_sehat_game.gd" id="1_oo1i2"]
+[ext_resource type="Texture2D" uid="uid://bcr8x4bs0j307" path="res://assets/perilaku-hidup-sehat/bg.png" id="2_sdt2n"]
+[ext_resource type="Texture2D" uid="uid://24a48rr2j4fr" path="res://assets/rambu/kayu.png" id="3_w8r4w"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="4_sec86"]
+[ext_resource type="StyleBox" uid="uid://cgrycnk4vedyo" path="res://Styles/card-bg-white.tres" id="5_8h0rb"]
+[ext_resource type="Texture2D" uid="uid://btmbiiaqhmgvh" path="res://assets/perilaku-hidup-sehat/shape-1.png" id="5_sdt2n"]
+[ext_resource type="Texture2D" uid="uid://wee8b8oxgbml" path="res://assets/perilaku-hidup-sehat/healty-1.png" id="6_8h0rb"]
+[ext_resource type="Script" uid="uid://2yeto6ahdk8n" path="res://scripts/back_button.gd" id="7_nalgo"]
+[ext_resource type="FontFile" uid="uid://d0cntpqh4f8fs" path="res://assets/fonts/poppins/Poppins-Bold.ttf" id="7_tg5w0"]
+[ext_resource type="Texture2D" uid="uid://cts813mffcdyi" path="res://assets/perilaku-hidup-sehat/unhealty-1.png" id="8_mi6s2"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="9_sdt2n"]
+[ext_resource type="Texture2D" uid="uid://egpqcf64ue3w" path="res://assets/perilaku-hidup-sehat/shape-2.png" id="9_wrtuo"]
+[ext_resource type="Texture2D" uid="uid://facmdjj432vj" path="res://assets/perilaku-hidup-sehat/healty-2.png" id="10_55ij3"]
+[ext_resource type="Texture2D" uid="uid://b3j5v8tvh0fjr" path="res://assets/perilaku-hidup-sehat/unhealty-2.png" id="11_yrr5d"]
+[ext_resource type="Texture2D" uid="uid://ojv4lvmawgbe" path="res://assets/perilaku-hidup-sehat/shape-3.png" id="12_s7vp2"]
+[ext_resource type="Texture2D" uid="uid://bicm7b0reh3la" path="res://assets/perilaku-hidup-sehat/healty-3.png" id="13_olme0"]
+[ext_resource type="Texture2D" uid="uid://doupa61l72wpf" path="res://assets/perilaku-hidup-sehat/unhealty-3.png" id="14_fow5p"]
+[ext_resource type="Texture2D" uid="uid://cmb651k14sg6c" path="res://assets/materi/papan-judul-bg.png" id="14_yrr5d"]
+[ext_resource type="Texture2D" uid="uid://nafj5rsdyati" path="res://assets/perilaku-hidup-sehat/shape-4.png" id="15_8shlc"]
+[ext_resource type="FontFile" uid="uid://cwm6wp0xq132v" path="res://assets/fonts/poppins/Poppins-Medium.ttf" id="15_s7vp2"]
+[ext_resource type="Texture2D" uid="uid://8aa6jyw56jon" path="res://assets/perilaku-hidup-sehat/healty-4.png" id="16_11ney"]
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="16_olme0"]
+[ext_resource type="Texture2D" uid="uid://cuoxj1qc7w65b" path="res://assets/simulasi/papan-selamat.png" id="17_fow5p"]
+[ext_resource type="Texture2D" uid="uid://ur7xsec624ry" path="res://assets/perilaku-hidup-sehat/unhealty-4.png" id="17_frcj4"]
+[ext_resource type="Texture2D" uid="uid://eyapgs668iug" path="res://assets/brands/arjuna-2.png" id="18_8shlc"]
+[ext_resource type="Texture2D" uid="uid://du218ka6o2g4r" path="res://assets/perilaku-hidup-sehat/shape-5.png" id="18_eaxu0"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="19_11ney"]
+[ext_resource type="Texture2D" uid="uid://dj2d8f8lkush7" path="res://assets/perilaku-hidup-sehat/unhealty-5.png" id="19_g3e4j"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="20_frcj4"]
+[ext_resource type="Texture2D" uid="uid://bxws7c8ceprk2" path="res://assets/perilaku-hidup-sehat/healty-5.png" id="20_mi6s2"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="21_eaxu0"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="22_g3e4j"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="23_4g8qe"]
+[ext_resource type="Texture2D" uid="uid://qgucs1sb4okk" path="res://assets/icons/back.png" id="24_hwefn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8h0rb"]
+blend_mode = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgo1p"]
+bg_color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="RambuGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oo1i2")
+
+[node name="bg-texture2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = -50.0
+offset_right = 259.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("2_sdt2n")
+expand_mode = 3
+
+[node name="Kayu" type="TextureRect" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -208.5
+offset_top = -140.0
+offset_right = 208.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_w8r4w")
+expand_mode = 2
+
+[node name="descriptions_group" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -652.0
+offset_top = 156.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_sec86")
+
+[node name="healty-1" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239264
+anchor_top = 0.0868794
+anchor_right = 0.358896
+anchor_bottom = 0.225177
+offset_top = -52.0
+offset_bottom = -52.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("5_sdt2n")
+expand_mode = 2
+
+[node name="unhealty-1" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.691718
+anchor_top = 0.0868794
+anchor_right = 0.81135
+anchor_bottom = 0.225177
+offset_top = -52.0
+offset_bottom = -52.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("5_sdt2n")
+expand_mode = 2
+
+[node name="healty-2" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239264
+anchor_top = 0.269504
+anchor_right = 0.358896
+anchor_bottom = 0.407801
+offset_top = -42.0
+offset_bottom = -42.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("9_wrtuo")
+expand_mode = 2
+
+[node name="unhealty-2" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.691718
+anchor_top = 0.269504
+anchor_right = 0.81135
+anchor_bottom = 0.407801
+offset_top = -42.0
+offset_bottom = -42.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("9_wrtuo")
+expand_mode = 2
+
+[node name="healty-3" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239264
+anchor_top = 0.443262
+anchor_right = 0.358896
+anchor_bottom = 0.58156
+offset_top = -34.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("12_s7vp2")
+expand_mode = 2
+
+[node name="unhealty-3" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.691718
+anchor_top = 0.443262
+anchor_right = 0.81135
+anchor_bottom = 0.58156
+offset_top = -34.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("12_s7vp2")
+expand_mode = 2
+
+[node name="healty-4" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239264
+anchor_top = 0.617021
+anchor_right = 0.358896
+anchor_bottom = 0.755319
+offset_left = -1.52588e-05
+offset_top = -13.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("15_8shlc")
+expand_mode = 2
+
+[node name="unhealty-4" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.691718
+anchor_top = 0.617021
+anchor_right = 0.81135
+anchor_bottom = 0.755319
+offset_left = -3.05176e-05
+offset_top = -13.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("15_8shlc")
+expand_mode = 2
+
+[node name="healty-5" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.239264
+anchor_top = 0.799645
+anchor_right = 0.358896
+anchor_bottom = 0.937943
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("18_eaxu0")
+expand_mode = 2
+
+[node name="unhealty-5" type="TextureRect" parent="descriptions_group"]
+texture_filter = 4
+material = SubResource("CanvasItemMaterial_8h0rb")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.691718
+anchor_top = 0.799645
+anchor_right = 0.81135
+anchor_bottom = 0.937943
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(39, 39)
+texture = ExtResource("18_eaxu0")
+expand_mode = 2
+
+[node name="activity_groups" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 200.0
+offset_right = 453.0
+offset_bottom = -26.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_8h0rb")
+
+[node name="healty-1" type="TextureButton" parent="activity_groups"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.3
+offset_top = -567.8
+offset_right = 383.7
+offset_bottom = 456.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("5_sdt2n")
+texture_pressed = ExtResource("5_sdt2n")
+texture_hover = ExtResource("5_sdt2n")
+texture_disabled = ExtResource("5_sdt2n")
+texture_focused = ExtResource("5_sdt2n")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/healty-1"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("6_8h0rb")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/healty-1"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="unhealty-1" type="TextureButton" parent="activity_groups"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -638.3
+offset_top = -341.8
+offset_right = 385.7
+offset_bottom = 682.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("5_sdt2n")
+texture_pressed = ExtResource("5_sdt2n")
+texture_hover = ExtResource("5_sdt2n")
+texture_disabled = ExtResource("5_sdt2n")
+texture_focused = ExtResource("5_sdt2n")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/unhealty-1"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("8_mi6s2")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/unhealty-1"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="healty-2" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -505.3
+offset_top = -337.8
+offset_right = 518.7
+offset_bottom = 686.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("9_wrtuo")
+texture_pressed = ExtResource("9_wrtuo")
+texture_hover = ExtResource("9_wrtuo")
+texture_disabled = ExtResource("9_wrtuo")
+texture_focused = ExtResource("9_wrtuo")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/healty-2"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("10_55ij3")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/healty-2"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="unhealty-2" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.3
+offset_top = -451.8
+offset_right = 383.7
+offset_bottom = 572.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("9_wrtuo")
+texture_pressed = ExtResource("9_wrtuo")
+texture_hover = ExtResource("9_wrtuo")
+texture_disabled = ExtResource("9_wrtuo")
+texture_focused = ExtResource("9_wrtuo")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/unhealty-2"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.00012
+offset_bottom = -7.00012
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("11_yrr5d")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/unhealty-2"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="healty-3" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -506.3
+offset_top = -442.8
+offset_right = 517.7
+offset_bottom = 581.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("12_s7vp2")
+texture_pressed = ExtResource("12_s7vp2")
+texture_hover = ExtResource("12_s7vp2")
+texture_disabled = ExtResource("12_s7vp2")
+texture_focused = ExtResource("12_s7vp2")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/healty-3"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("13_olme0")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/healty-3"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="unhealty-3" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.3
+offset_top = -331.8
+offset_right = 643.7
+offset_bottom = 692.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("12_s7vp2")
+texture_pressed = ExtResource("12_s7vp2")
+texture_hover = ExtResource("12_s7vp2")
+texture_disabled = ExtResource("12_s7vp2")
+texture_focused = ExtResource("12_s7vp2")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/unhealty-3"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.00012
+offset_bottom = -7.00012
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("14_fow5p")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/unhealty-3"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="healty-4" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -506.3
+offset_top = -687.8
+offset_right = 517.7
+offset_bottom = 336.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("15_8shlc")
+texture_pressed = ExtResource("15_8shlc")
+texture_hover = ExtResource("15_8shlc")
+texture_disabled = ExtResource("15_8shlc")
+texture_focused = ExtResource("15_8shlc")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/healty-4"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("16_11ney")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/healty-4"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="unhealty-4" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.3
+offset_top = -568.8
+offset_right = 645.7
+offset_bottom = 455.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("15_8shlc")
+texture_pressed = ExtResource("15_8shlc")
+texture_hover = ExtResource("15_8shlc")
+texture_disabled = ExtResource("15_8shlc")
+texture_focused = ExtResource("15_8shlc")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/unhealty-4"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.00012
+offset_bottom = -7.00012
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("17_frcj4")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/unhealty-4"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="healty-5" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -501.3
+offset_top = -568.8
+offset_right = 522.7
+offset_bottom = 455.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("18_eaxu0")
+texture_pressed = ExtResource("18_eaxu0")
+texture_hover = ExtResource("18_eaxu0")
+texture_disabled = ExtResource("18_eaxu0")
+texture_focused = ExtResource("18_eaxu0")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/healty-5"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("20_mi6s2")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/healty-5"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="unhealty-5" type="TextureButton" parent="activity_groups"]
+clip_children = 2
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -374.3
+offset_top = -449.8
+offset_right = 649.7
+offset_bottom = 574.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(512, 512)
+texture_normal = ExtResource("18_eaxu0")
+texture_pressed = ExtResource("18_eaxu0")
+texture_hover = ExtResource("18_eaxu0")
+texture_disabled = ExtResource("18_eaxu0")
+texture_focused = ExtResource("18_eaxu0")
+
+[node name="TextureRect" type="TextureRect" parent="activity_groups/unhealty-5"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.00012
+offset_bottom = -7.00012
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("19_g3e4j")
+expand_mode = 2
+
+[node name="AnimationComponent4" type="Node" parent="activity_groups/unhealty-5"]
+script = ExtResource("9_sdt2n")
+is_center_pivot = false
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="CurrentTimePanel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 262.0
+offset_top = 63.0
+offset_right = 262.0
+offset_bottom = 63.0
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_sec86")
+
+[node name="TextureRect" type="TextureRect" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_yrr5d")
+expand_mode = 2
+
+[node name="CurrentTimeHeading" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("15_s7vp2")
+theme_override_font_sizes/font_size = 16
+text = "Waktu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -10.0
+offset_right = 7.0
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_tg5w0")
+theme_override_font_sizes/font_size = 32
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel2" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 87.0
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_tg5w0")
+theme_override_font_sizes/font_size = 32
+text = "detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="heading-healty" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -458.0
+offset_top = 65.0
+offset_right = -458.0
+offset_bottom = 65.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_sec86")
+
+[node name="TextureRect" type="TextureRect" parent="heading-healty"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -39.0
+offset_right = 140.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_yrr5d")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="heading-healty"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -21.0
+offset_right = 130.0
+offset_bottom = 24.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_tg5w0")
+theme_override_font_sizes/font_size = 20
+text = "Kegiatan Menyehatkan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="heading-unhealty" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -155.0
+offset_top = 65.0
+offset_right = -155.0
+offset_bottom = 65.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_sec86")
+
+[node name="TextureRect" type="TextureRect" parent="heading-unhealty"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = -39.0
+offset_right = 140.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_yrr5d")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="heading-unhealty"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -21.0
+offset_right = 130.0
+offset_bottom = 24.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_tg5w0")
+theme_override_font_sizes/font_size = 20
+text = "Kegiatan Tidak Sehat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.609
+offset_right = 142.609
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bgo1p")
+
+[node name="bg-texture2" type="TextureRect" parent="ResultPanel"]
+layout_mode = 2
+texture = ExtResource("16_olme0")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="ResultPanel"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_sec86")
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.609
+offset_top = 39.0
+offset_right = 208.391
+offset_bottom = 179.0
+grow_horizontal = 2
+texture = ExtResource("17_fow5p")
+expand_mode = 2
+
+[node name="Arjuna1" type="Panel" parent="ResultPanel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -118.0
+offset_bottom = -118.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/Arjuna1"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0305
+offset_top = -109.0
+offset_right = 89.0305
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_8shlc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultPanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = 102.0
+offset_right = 322.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BestTimePanel" type="Panel" parent="ResultPanel/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_sec86")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_yrr5d")
+expand_mode = 2
+
+[node name="BestTimeHeading" type="Label" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("15_s7vp2")
+theme_override_font_sizes/font_size = 16
+text = "Waktu terbaik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestTimeLabel" type="Label" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.391
+offset_top = -10.0
+offset_right = 129.609
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_tg5w0")
+theme_override_font_sizes/font_size = 32
+text = "0.00 detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimePanel" type="Panel" parent="ResultPanel/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_sec86")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_yrr5d")
+expand_mode = 2
+
+[node name="CurrentTimeHeading" type="Label" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("15_s7vp2")
+theme_override_font_sizes/font_size = 16
+text = "Selesai dalam"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimeLabel" type="Label" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.391
+offset_top = -10.0
+offset_right = 129.609
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_tg5w0")
+theme_override_font_sizes/font_size = 32
+text = "0.00 detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="ResultPanel/Panel"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.609
+offset_top = -145.0
+offset_right = 123.391
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("19_11ney")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("20_frcj4")
+theme_override_styles/disabled_mirrored = ExtResource("21_eaxu0")
+theme_override_styles/disabled = ExtResource("21_eaxu0")
+theme_override_styles/hover_pressed_mirrored = ExtResource("22_g3e4j")
+theme_override_styles/hover_pressed = ExtResource("22_g3e4j")
+theme_override_styles/hover_mirrored = ExtResource("22_g3e4j")
+theme_override_styles/hover = ExtResource("22_g3e4j")
+theme_override_styles/pressed_mirrored = ExtResource("20_frcj4")
+theme_override_styles/pressed = ExtResource("20_frcj4")
+theme_override_styles/normal_mirrored = ExtResource("23_4g8qe")
+theme_override_styles/normal = ExtResource("23_4g8qe")
+text = "Main Lagi"
+
+[node name="AnimationComponent3" type="Node" parent="ResultPanel/Panel/RestartButton"]
+script = ExtResource("9_sdt2n")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Heading" type="Label" parent="ResultPanel/Panel"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -14.0
+offset_right = 424.0
+offset_bottom = 31.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("7_tg5w0")
+theme_override_font_sizes/font_size = 32
+text = "Kamu berhasil menyelesaikan permainan."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 4
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("19_11ney")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("20_frcj4")
+theme_override_styles/disabled_mirrored = ExtResource("21_eaxu0")
+theme_override_styles/disabled = ExtResource("21_eaxu0")
+theme_override_styles/hover_pressed_mirrored = ExtResource("22_g3e4j")
+theme_override_styles/hover_pressed = ExtResource("22_g3e4j")
+theme_override_styles/hover_mirrored = ExtResource("22_g3e4j")
+theme_override_styles/hover = ExtResource("22_g3e4j")
+theme_override_styles/pressed_mirrored = ExtResource("20_frcj4")
+theme_override_styles/pressed = ExtResource("20_frcj4")
+theme_override_styles/normal_mirrored = ExtResource("23_4g8qe")
+theme_override_styles/normal = ExtResource("23_4g8qe")
+icon = ExtResource("24_hwefn")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("7_nalgo")
+
+[node name="AnimationComponent4" type="Node" parent="BackButton"]
+script = ExtResource("9_sdt2n")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"

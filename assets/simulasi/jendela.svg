@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bingkai jendela -->
+  <rect x="20" y="20" width="110" height="110" fill="#8B4513"/>
+  
+  <!-- Kaca jendela -->
+  <rect x="25" y="25" width="100" height="100" fill="#ADD8E6"/>
+  
+  <!-- Palang jendela horizontal -->
+  <rect x="25" y="75" width="100" height="2" fill="#8B4513"/>
+  
+  <!-- Palang jendela vertikal -->
+  <rect x="75" y="25" width="2" height="100" fill="#8B4513"/>
+</svg>

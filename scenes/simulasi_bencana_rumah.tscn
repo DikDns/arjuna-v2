@@ -1,0 +1,587 @@
+[gd_scene load_steps=24 format=3 uid="uid://bdgayfndwb8cm"]
+
+[ext_resource type="Script" uid="uid://2yeto6ahdk8n" path="res://scripts/back_button.gd" id="1_a0aoj"]
+[ext_resource type="Script" uid="uid://bhbvjn44sqtdu" path="res://scripts/simulasi_bencana.gd" id="1_yvnbj"]
+[ext_resource type="Texture2D" uid="uid://bgmqw7n047ya7" path="res://assets/simulasi/rumah/bg-simulasi-rumah.png" id="2_a83qi"]
+[ext_resource type="Texture2D" uid="uid://d2m46hyxe4twc" path="res://assets/simulasi/anak-1.png" id="2_ivty7"]
+[ext_resource type="Texture2D" uid="uid://cb8antiph4f0b" path="res://assets/simulasi/anak-2.png" id="3_ivty7"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="6_3rpyg"]
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="7_a83qi"]
+[ext_resource type="Texture2D" uid="uid://cllsi2k478lua" path="res://assets/simulasi/rumah/sofa.png" id="7_ivty7"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="8_68xrk"]
+[ext_resource type="Texture2D" uid="uid://bqf0vvf8ol2ke" path="res://assets/simulasi/rumah/meja.png" id="8_a83qi"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="8_jwt6j"]
+[ext_resource type="Texture2D" uid="uid://dpqnbdj2qn0g7" path="res://assets/simulasi/rumah/tv.png" id="8_olkin"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="9_68xrk"]
+[ext_resource type="Texture2D" uid="uid://cuoxj1qc7w65b" path="res://assets/simulasi/papan-selamat.png" id="9_o863j"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="10_8gab2"]
+[ext_resource type="FontFile" uid="uid://d0cntpqh4f8fs" path="res://assets/fonts/poppins/Poppins-Bold.ttf" id="10_yrfmo"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="11_jfk0c"]
+[ext_resource type="Texture2D" uid="uid://eyapgs668iug" path="res://assets/brands/arjuna-2.png" id="11_yrfmo"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="12_kdbfs"]
+[ext_resource type="Texture2D" uid="uid://qgucs1sb4okk" path="res://assets/icons/back.png" id="13_o863j"]
+[ext_resource type="Texture2D" uid="uid://cmb651k14sg6c" path="res://assets/materi/papan-judul-bg.png" id="16_3baai"]
+[ext_resource type="FontFile" uid="uid://cwm6wp0xq132v" path="res://assets/fonts/poppins/Poppins-Medium.ttf" id="17_3rpyg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0aoj"]
+bg_color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="SimulasiBencanaRumah" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yvnbj")
+timer = 10.0
+
+[node name="bg2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999958
+anchor_bottom = 1.00028
+offset_right = 0.0479736
+offset_bottom = -0.184021
+color = Color(0.949796, 0.919485, 0.734675, 1)
+
+[node name="bg-texture2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = -50.0
+offset_right = 259.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("2_a83qi")
+expand_mode = 3
+
+[node name="tv" type="TextureRect" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.722222
+anchor_top = 0.119599
+anchor_right = 1.17231
+anchor_bottom = 0.919753
+offset_left = -257.0
+offset_top = -228.5
+offset_right = 261.5
+offset_bottom = 290.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(514, 457)
+texture = ExtResource("8_olkin")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="sofa" type="TextureRect" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0138889
+anchor_top = 0.259259
+anchor_right = 0.532552
+anchor_bottom = 0.841049
+offset_left = -257.0
+offset_top = -228.5
+offset_right = 372.5
+offset_bottom = 148.5
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(514, 457)
+texture = ExtResource("7_ivty7")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="anak1" type="TextureRect" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.502725
+anchor_top = 0.577661
+anchor_right = 0.502725
+anchor_bottom = 0.577661
+offset_left = -479.488
+offset_top = -379.916
+offset_right = 24.512
+offset_bottom = 124.084
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(514, 457)
+texture = ExtResource("2_ivty7")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationComponent2" type="Node" parent="anak1"]
+script = ExtResource("6_3rpyg")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="anak2" type="TextureRect" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.319125
+anchor_top = 0.559839
+anchor_right = 0.319125
+anchor_bottom = 0.559839
+offset_left = -440.48
+offset_top = -344.084
+offset_right = 63.52
+offset_bottom = 159.916
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(514, 457)
+texture = ExtResource("3_ivty7")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationComponent" type="Node" parent="anak2"]
+script = ExtResource("6_3rpyg")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Meja" type="TextureRect" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.274306
+anchor_top = 0.652006
+anchor_right = 0.789497
+anchor_bottom = 1.16744
+offset_left = -257.0
+offset_top = -228.5
+offset_right = 336.5
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(514, 457)
+texture = ExtResource("8_a83qi")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 113.0
+offset_right = 130.0
+offset_bottom = 136.0
+grow_horizontal = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("10_yrfmo")
+theme_override_font_sizes/font_size = 16
+text = "Simulasi Bencana Rumah"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("8_68xrk")
+
+[node name="TextureRect" type="TextureRect" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_3baai")
+expand_mode = 2
+
+[node name="CurrentTimeHeading" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("17_3rpyg")
+theme_override_font_sizes/font_size = 16
+text = "Sisa Waktu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -10.0
+offset_right = 7.0
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("10_yrfmo")
+theme_override_font_sizes/font_size = 32
+text = "0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLabel2" type="Label" parent="CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 87.0
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("10_yrfmo")
+theme_override_font_sizes/font_size = 32
+text = "detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultPanel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.609
+offset_right = 142.609
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a0aoj")
+
+[node name="bg-texture2" type="TextureRect" parent="ResultPanel"]
+layout_mode = 2
+texture = ExtResource("7_a83qi")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="ResultPanel"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("8_68xrk")
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.609
+offset_top = 39.0
+offset_right = 208.391
+offset_bottom = 179.0
+grow_horizontal = 2
+texture = ExtResource("9_o863j")
+expand_mode = 2
+
+[node name="Arjuna1" type="Panel" parent="ResultPanel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -118.0
+offset_bottom = -118.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/Arjuna1"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0305
+offset_top = -109.0
+offset_right = 89.0305
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_yrfmo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultPanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = 102.0
+offset_right = 322.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BestTimePanel" type="Panel" parent="ResultPanel/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("8_68xrk")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_3baai")
+expand_mode = 2
+
+[node name="BestTimeHeading" type="Label" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("17_3rpyg")
+theme_override_font_sizes/font_size = 16
+text = "Waktu terbaik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestTimeLabel" type="Label" parent="ResultPanel/Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.391
+offset_top = -10.0
+offset_right = 129.609
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("10_yrfmo")
+theme_override_font_sizes/font_size = 32
+text = "0.00 detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimePanel" type="Panel" parent="ResultPanel/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("8_68xrk")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_3baai")
+expand_mode = 2
+
+[node name="CurrentTimeHeading" type="Label" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("17_3rpyg")
+theme_override_font_sizes/font_size = 16
+text = "Selesai dalam"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTimeLabel" type="Label" parent="ResultPanel/Panel/HBoxContainer/CurrentTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.391
+offset_top = -10.0
+offset_right = 129.609
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("10_yrfmo")
+theme_override_font_sizes/font_size = 32
+text = "0.00 detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="ResultPanel/Panel"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.609
+offset_top = -145.0
+offset_right = 123.391
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("8_jwt6j")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("9_68xrk")
+theme_override_styles/disabled_mirrored = ExtResource("10_8gab2")
+theme_override_styles/disabled = ExtResource("10_8gab2")
+theme_override_styles/hover_pressed_mirrored = ExtResource("11_jfk0c")
+theme_override_styles/hover_pressed = ExtResource("11_jfk0c")
+theme_override_styles/hover_mirrored = ExtResource("11_jfk0c")
+theme_override_styles/hover = ExtResource("11_jfk0c")
+theme_override_styles/pressed_mirrored = ExtResource("9_68xrk")
+theme_override_styles/pressed = ExtResource("9_68xrk")
+theme_override_styles/normal_mirrored = ExtResource("12_kdbfs")
+theme_override_styles/normal = ExtResource("12_kdbfs")
+text = "Main Lagi"
+
+[node name="AnimationComponent3" type="Node" parent="ResultPanel/Panel/RestartButton"]
+script = ExtResource("6_3rpyg")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="Heading" type="Label" parent="ResultPanel/Panel"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -14.0
+offset_right = 424.0
+offset_bottom = 31.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("10_yrfmo")
+theme_override_font_sizes/font_size = 32
+text = "Kamu berhasil menyelesaikan permainan."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 4
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("8_jwt6j")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("9_68xrk")
+theme_override_styles/disabled_mirrored = ExtResource("10_8gab2")
+theme_override_styles/disabled = ExtResource("10_8gab2")
+theme_override_styles/hover_pressed_mirrored = ExtResource("11_jfk0c")
+theme_override_styles/hover_pressed = ExtResource("11_jfk0c")
+theme_override_styles/hover_mirrored = ExtResource("11_jfk0c")
+theme_override_styles/hover = ExtResource("11_jfk0c")
+theme_override_styles/pressed_mirrored = ExtResource("9_68xrk")
+theme_override_styles/pressed = ExtResource("9_68xrk")
+theme_override_styles/normal_mirrored = ExtResource("12_kdbfs")
+theme_override_styles/normal = ExtResource("12_kdbfs")
+icon = ExtResource("13_o863j")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_a0aoj")
+
+[node name="AnimationComponent4" type="Node" parent="BackButton"]
+script = ExtResource("6_3rpyg")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"

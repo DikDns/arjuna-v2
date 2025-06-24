@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://btokob0ir5kcb"]
+
+[ext_resource type="Script" uid="uid://cr2p63hsb3ned" path="res://scripts/start_button.gd" id="1_jaeev"]
+[ext_resource type="Script" uid="uid://d2dvsk5i048kw" path="res://scripts/exit_button.gd" id="1_u80x2"]
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999958
+anchor_bottom = 1.00028
+offset_right = 0.0479736
+offset_bottom = -0.184021
+color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(256, 512)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "ARJUNA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("1_jaeev")
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 86.0
+offset_bottom = 63.0
+text = "Exit
+"
+script = ExtResource("1_u80x2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -217.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 63.0
+grow_horizontal = 0
+pivot_offset = Vector2(185, 0)
+theme_override_constants/separation = 16
+
+[node name="SettingsButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="HelpButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Help"
+
+[node name="InfoButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Info
+"

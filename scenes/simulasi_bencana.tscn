@@ -1,0 +1,283 @@
+[gd_scene load_steps=18 format=3 uid="uid://uya45ydp001f"]
+
+[ext_resource type="Script" uid="uid://2yeto6ahdk8n" path="res://scripts/back_button.gd" id="1_4vyi6"]
+[ext_resource type="Script" uid="uid://bicm2eycncx46" path="res://scripts/simulasi_bencana_menu_controller.gd" id="1_81e8t"]
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="3_4vs4g"]
+[ext_resource type="StyleBox" uid="uid://cn38jxpbpiwh2" path="res://scenes/card-bg-red.tres" id="4_4jflq"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="4_b01vp"]
+[ext_resource type="Texture2D" uid="uid://dx7tqtahkleyb" path="res://assets/simulasi/bg-rumah.png" id="4_miga5"]
+[ext_resource type="Texture2D" uid="uid://boa7vxtpg0mwb" path="res://assets/simulasi/bg-sekolah.png" id="11_bx6s3"]
+[ext_resource type="StyleBox" uid="uid://bd5p7pxbtvymf" path="res://scenes/card-bg-yellow.tres" id="11_e2hsv"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="11_uy8am"]
+[ext_resource type="Texture2D" uid="uid://c0gq75hqjbj10" path="res://assets/simulasi/bg-supermarket.png" id="12_e2hsv"]
+[ext_resource type="StyleBox" uid="uid://pysbuvqf340q" path="res://scenes/card-bg-blue.tres" id="13_el8pp"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="15_w007e"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="16_5mvm8"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="17_pe567"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="18_3kx1m"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="19_j058u"]
+[ext_resource type="Texture2D" uid="uid://qgucs1sb4okk" path="res://assets/icons/back.png" id="20_2dsge"]
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_81e8t")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999958
+anchor_bottom = 1.00028
+offset_right = 0.0479736
+offset_bottom = -0.184021
+color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="bg-texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.413
+offset_top = -60.0
+offset_right = 285.413
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("3_4vs4g")
+expand_mode = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(768, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0538194
+anchor_top = 0.223765
+anchor_right = 0.944444
+anchor_bottom = 0.910494
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_b01vp")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="bg-card" type="Panel" parent="PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("4_4jflq")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/HBoxContainer/bg-card"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.12809
+anchor_right = 1.0
+anchor_bottom = 0.586517
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_miga5")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="PanelContainer2/HBoxContainer/bg-card"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -145.0
+offset_right = 91.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("15_w007e")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("16_5mvm8")
+theme_override_styles/disabled_mirrored = ExtResource("17_pe567")
+theme_override_styles/disabled = ExtResource("17_pe567")
+theme_override_styles/hover_pressed_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover_pressed = ExtResource("18_3kx1m")
+theme_override_styles/hover_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover = ExtResource("18_3kx1m")
+theme_override_styles/pressed_mirrored = ExtResource("16_5mvm8")
+theme_override_styles/pressed = ExtResource("16_5mvm8")
+theme_override_styles/normal_mirrored = ExtResource("19_j058u")
+theme_override_styles/normal = ExtResource("19_j058u")
+text = "Rumah"
+
+[node name="AnimationComponent4" type="Node" parent="PanelContainer2/HBoxContainer/bg-card/Button"]
+script = ExtResource("11_uy8am")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="bg-card3" type="Panel" parent="PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("11_e2hsv")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/HBoxContainer/bg-card3"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.12809
+anchor_right = 1.0
+anchor_bottom = 0.586517
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_e2hsv")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="PanelContainer2/HBoxContainer/bg-card3"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -145.0
+offset_right = 91.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("15_w007e")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("16_5mvm8")
+theme_override_styles/disabled_mirrored = ExtResource("17_pe567")
+theme_override_styles/disabled = ExtResource("17_pe567")
+theme_override_styles/hover_pressed_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover_pressed = ExtResource("18_3kx1m")
+theme_override_styles/hover_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover = ExtResource("18_3kx1m")
+theme_override_styles/pressed_mirrored = ExtResource("16_5mvm8")
+theme_override_styles/pressed = ExtResource("16_5mvm8")
+theme_override_styles/normal_mirrored = ExtResource("19_j058u")
+theme_override_styles/normal = ExtResource("19_j058u")
+text = "Supermarket"
+
+[node name="AnimationComponent4" type="Node" parent="PanelContainer2/HBoxContainer/bg-card3/Button"]
+script = ExtResource("11_uy8am")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="bg-card2" type="Panel" parent="PanelContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("13_el8pp")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/HBoxContainer/bg-card2"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.12809
+anchor_right = 1.0
+anchor_bottom = 0.586517
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_bx6s3")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="PanelContainer2/HBoxContainer/bg-card2"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -145.0
+offset_right = 91.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("15_w007e")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("16_5mvm8")
+theme_override_styles/disabled_mirrored = ExtResource("17_pe567")
+theme_override_styles/disabled = ExtResource("17_pe567")
+theme_override_styles/hover_pressed_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover_pressed = ExtResource("18_3kx1m")
+theme_override_styles/hover_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover = ExtResource("18_3kx1m")
+theme_override_styles/pressed_mirrored = ExtResource("16_5mvm8")
+theme_override_styles/pressed = ExtResource("16_5mvm8")
+theme_override_styles/normal_mirrored = ExtResource("19_j058u")
+theme_override_styles/normal = ExtResource("19_j058u")
+text = "Sekolah"
+
+[node name="AnimationComponent4" type="Node" parent="PanelContainer2/HBoxContainer/bg-card2/Button"]
+script = ExtResource("11_uy8am")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 4
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("15_w007e")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("16_5mvm8")
+theme_override_styles/disabled_mirrored = ExtResource("17_pe567")
+theme_override_styles/disabled = ExtResource("17_pe567")
+theme_override_styles/hover_pressed_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover_pressed = ExtResource("18_3kx1m")
+theme_override_styles/hover_mirrored = ExtResource("18_3kx1m")
+theme_override_styles/hover = ExtResource("18_3kx1m")
+theme_override_styles/pressed_mirrored = ExtResource("16_5mvm8")
+theme_override_styles/pressed = ExtResource("16_5mvm8")
+theme_override_styles/normal_mirrored = ExtResource("19_j058u")
+theme_override_styles/normal = ExtResource("19_j058u")
+icon = ExtResource("20_2dsge")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_4vyi6")
+
+[node name="AnimationComponent4" type="Node" parent="BackButton"]
+script = ExtResource("11_uy8am")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[connection signal="pressed" from="PanelContainer2/HBoxContainer/bg-card/Button" to="." method="_on_simulasi_bencana_rumah_pressed"]
+[connection signal="pressed" from="PanelContainer2/HBoxContainer/bg-card3/Button" to="." method="_on_simulasi_bencana_supermarket_pressed"]
+[connection signal="pressed" from="PanelContainer2/HBoxContainer/bg-card2/Button" to="." method="_on_simulasi_bencana_sekolah_pressed"]

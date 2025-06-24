@@ -1,0 +1,176 @@
+[gd_scene load_steps=22 format=3 uid="uid://cwpov4dgkawcy"]
+
+[ext_resource type="Script" uid="uid://3g2qyokhnqvb" path="res://scripts/game_menu_controller.gd" id="1_vrsc2"]
+[ext_resource type="Script" uid="uid://2yeto6ahdk8n" path="res://scripts/back_button.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="2_bd6dg"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="3_rtlw8"]
+[ext_resource type="Texture2D" uid="uid://c6uf5urs6mbt0" path="res://assets/bg-game-menu.png" id="4_bd6dg"]
+[ext_resource type="Texture2D" uid="uid://dyyop80o66gjb" path="res://assets/game/button-simulasi-bencana.png" id="5_bd6dg"]
+[ext_resource type="Texture2D" uid="uid://dxlf40gsw7ssj" path="res://assets/game/button-simulasi-bencana-pressed.png" id="6_rtlw8"]
+[ext_resource type="Texture2D" uid="uid://25embqr5wsd8" path="res://assets/game/button-simulasi-bencana-hover.png" id="7_w0drc"]
+[ext_resource type="Texture2D" uid="uid://dhg80in7uul3s" path="res://assets/game/button-rambu-bencana.png" id="8_bd6dg"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="8_rtlw8"]
+[ext_resource type="Texture2D" uid="uid://pl1qas6vpkm1" path="res://assets/game/button-rambu-bencana-pressed.png" id="9_rtlw8"]
+[ext_resource type="Texture2D" uid="uid://dnxbld7bmhul5" path="res://assets/game/button-rambu-bencana-hover.png" id="10_w0drc"]
+[ext_resource type="Texture2D" uid="uid://c8j5whhkxmhct" path="res://assets/game/button-perilaku-hidup-sehat.png" id="11_bd6dg"]
+[ext_resource type="Texture2D" uid="uid://cf5aghd3lyv8l" path="res://assets/game/button-perilaku-hidup-sehat-pressed.png" id="12_rtlw8"]
+[ext_resource type="Texture2D" uid="uid://2d0lv020sjdk" path="res://assets/game/button-perilaku-hidup-sehat-hover.png" id="13_w0drc"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="14_ip28d"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="15_tl8d5"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="16_kgw2r"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="17_usncj"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="18_v8y4g"]
+[ext_resource type="Texture2D" uid="uid://qgucs1sb4okk" path="res://assets/icons/back.png" id="19_cdx2v"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrsc2")
+
+[node name="bg2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999958
+anchor_bottom = 1.00028
+offset_right = 0.0479736
+offset_bottom = -0.184021
+color = Color(0.894118, 0.933333, 0.984314, 1)
+
+[node name="bg-texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.413
+offset_top = -60.0
+offset_right = 285.413
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("2_bd6dg")
+expand_mode = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(512, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.104167
+anchor_top = 0.174383
+anchor_right = 0.895833
+anchor_bottom = 0.861111
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_rtlw8")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Panel" type="Panel" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_rtlw8")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/VBoxContainer/Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bd6dg")
+expand_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer2/VBoxContainer/HBoxContainer2"]
+texture_filter = 4
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("5_bd6dg")
+texture_pressed = ExtResource("6_rtlw8")
+texture_hover = ExtResource("7_w0drc")
+texture_focused = ExtResource("6_rtlw8")
+stretch_mode = 5
+
+[node name="AnimationComponent4" type="Node" parent="PanelContainer2/VBoxContainer/HBoxContainer2/TextureButton"]
+script = ExtResource("8_rtlw8")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer2/VBoxContainer/HBoxContainer2"]
+texture_filter = 4
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_bd6dg")
+texture_pressed = ExtResource("9_rtlw8")
+texture_hover = ExtResource("10_w0drc")
+texture_focused = ExtResource("9_rtlw8")
+stretch_mode = 5
+
+[node name="AnimationComponent4" type="Node" parent="PanelContainer2/VBoxContainer/HBoxContainer2/TextureButton2"]
+script = ExtResource("8_rtlw8")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer2/VBoxContainer/HBoxContainer2"]
+texture_filter = 4
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("11_bd6dg")
+texture_pressed = ExtResource("12_rtlw8")
+texture_hover = ExtResource("13_w0drc")
+texture_focused = ExtResource("12_rtlw8")
+stretch_mode = 5
+
+[node name="AnimationComponent4" type="Node" parent="PanelContainer2/VBoxContainer/HBoxContainer2/TextureButton3"]
+script = ExtResource("8_rtlw8")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 4
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("14_ip28d")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("15_tl8d5")
+theme_override_styles/disabled_mirrored = ExtResource("16_kgw2r")
+theme_override_styles/disabled = ExtResource("16_kgw2r")
+theme_override_styles/hover_pressed_mirrored = ExtResource("17_usncj")
+theme_override_styles/hover_pressed = ExtResource("17_usncj")
+theme_override_styles/hover_mirrored = ExtResource("17_usncj")
+theme_override_styles/hover = ExtResource("17_usncj")
+theme_override_styles/pressed_mirrored = ExtResource("15_tl8d5")
+theme_override_styles/pressed = ExtResource("15_tl8d5")
+theme_override_styles/normal_mirrored = ExtResource("18_v8y4g")
+theme_override_styles/normal = ExtResource("18_v8y4g")
+icon = ExtResource("19_cdx2v")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_yqeox")
+
+[node name="AnimationComponent" type="Node" parent="BackButton"]
+script = ExtResource("8_rtlw8")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[connection signal="pressed" from="PanelContainer2/VBoxContainer/HBoxContainer2/TextureButton" to="." method="_on_simulasi_bencana_pressed"]
+[connection signal="pressed" from="PanelContainer2/VBoxContainer/HBoxContainer2/TextureButton2" to="." method="_on_rambu_bencana_pressed"]
+[connection signal="pressed" from="PanelContainer2/VBoxContainer/HBoxContainer2/TextureButton3" to="." method="_on_perilaku_hidup_sehat_pressed"]

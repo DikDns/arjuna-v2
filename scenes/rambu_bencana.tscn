@@ -1,0 +1,264 @@
+[gd_scene load_steps=17 format=3 uid="uid://c6o4enei08p1r"]
+
+[ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="1_cki2o"]
+[ext_resource type="Script" uid="uid://2yeto6ahdk8n" path="res://scripts/back_button.gd" id="1_w0csi"]
+[ext_resource type="Script" uid="uid://bcx1iapbq3rx3" path="res://scripts/start_rambu_game.gd" id="2_lfcsi"]
+[ext_resource type="Texture2D" uid="uid://eyapgs668iug" path="res://assets/brands/arjuna-2.png" id="3_2fn1j"]
+[ext_resource type="Texture2D" uid="uid://vo4qmyce5pvi" path="res://assets/kuis/papan-judul.png" id="3_w8pa6"]
+[ext_resource type="FontFile" uid="uid://3sitrdkcoha1" path="res://assets/fonts/poppins/Poppins-SemiBold.ttf" id="4_rspx3"]
+[ext_resource type="StyleBox" uid="uid://dpebpqk4clb5w" path="res://assets/fonts/poppins/button-style-pressed.tres" id="5_s2h5o"]
+[ext_resource type="StyleBox" uid="uid://bj2i6ic0rewph" path="res://assets/fonts/poppins/buton-style-disabled.tres" id="6_7lvf6"]
+[ext_resource type="StyleBox" uid="uid://dh8fec1g1qjym" path="res://assets/fonts/poppins/button-style-hover.tres" id="7_w8pa6"]
+[ext_resource type="StyleBox" uid="uid://x6yooi0famqo" path="res://assets/fonts/poppins/button-style-normal.tres" id="8_0j485"]
+[ext_resource type="Texture2D" uid="uid://qgucs1sb4okk" path="res://assets/icons/back.png" id="9_ftvg5"]
+[ext_resource type="Script" uid="uid://o1x71hr7b1nq" path="res://scripts/animation_component.gd" id="11_810vc"]
+[ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="12_0j485"]
+[ext_resource type="Texture2D" uid="uid://cmb651k14sg6c" path="res://assets/materi/papan-judul-bg.png" id="14_810vc"]
+[ext_resource type="FontFile" uid="uid://cwm6wp0xq132v" path="res://assets/fonts/poppins/Poppins-Medium.ttf" id="15_62e6p"]
+[ext_resource type="FontFile" uid="uid://d0cntpqh4f8fs" path="res://assets/fonts/poppins/Poppins-Bold.ttf" id="16_rwajo"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg-texture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.674
+offset_top = -60.0
+offset_right = 299.674
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+pivot_offset = Vector2(809.939, 367.48)
+texture = ExtResource("1_cki2o")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("12_0j485")
+
+[node name="Arjuna1" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Arjuna1"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 81.0
+offset_top = -284.0
+offset_right = 568.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2fn1j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -713.0
+offset_top = -29.0
+offset_right = -32.0
+offset_bottom = 419.0
+grow_horizontal = 0
+texture = ExtResource("3_w8pa6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Heading" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -632.0
+offset_top = 169.0
+offset_right = -153.0
+offset_bottom = 311.0
+grow_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_fonts/font = ExtResource("16_rwajo")
+theme_override_font_sizes/font_size = 32
+text = "Ayo Tunjukan Pengetahuanmu Tentang Rambu Bencana Alam"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = 85.0
+offset_right = -32.0
+offset_bottom = 125.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BestTimePanel" type="Panel" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("12_0j485")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -47.0
+offset_right = 136.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_810vc")
+expand_mode = 2
+
+[node name="BestTimeHeading" type="Label" parent="Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -34.0
+offset_right = 130.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("15_62e6p")
+theme_override_font_sizes/font_size = 16
+text = "Rekor Tercepat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestTimeLabel" type="Label" parent="Panel/HBoxContainer/BestTimePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.391
+offset_top = -10.0
+offset_right = 129.609
+offset_bottom = 35.3333
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.129412, 0.254902, 0.4, 1)
+theme_override_fonts/font = ExtResource("16_rwajo")
+theme_override_font_sizes/font_size = 32
+text = "0.00 detik"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="Panel"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -516.0
+offset_top = -150.0
+offset_right = -270.0
+offset_bottom = -72.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("4_rspx3")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = ExtResource("5_s2h5o")
+theme_override_styles/disabled_mirrored = ExtResource("6_7lvf6")
+theme_override_styles/disabled = ExtResource("6_7lvf6")
+theme_override_styles/hover_pressed_mirrored = ExtResource("7_w8pa6")
+theme_override_styles/hover_pressed = ExtResource("7_w8pa6")
+theme_override_styles/hover_mirrored = ExtResource("7_w8pa6")
+theme_override_styles/hover = ExtResource("7_w8pa6")
+theme_override_styles/pressed_mirrored = ExtResource("5_s2h5o")
+theme_override_styles/pressed = ExtResource("5_s2h5o")
+theme_override_styles/normal_mirrored = ExtResource("8_0j485")
+theme_override_styles/normal = ExtResource("8_0j485")
+text = "Mulai"
+script = ExtResource("2_lfcsi")
+
+[node name="AnimationComponent4" type="Node" parent="Panel/StartButton"]
+script = ExtResource("11_810vc")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 4
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+theme_override_colors/font_disabled_color = Color(0.172549, 0.298039, 0.117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(0.92549, 0.976471, 0.901961, 1)
+theme_override_colors/font_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.984314, 0.933333, 1)
+theme_override_colors/font_pressed_color = Color(0.843137, 0.952941, 0.796078, 1)
+theme_override_fonts/font = ExtResource("4_rspx3")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("5_s2h5o")
+theme_override_styles/disabled_mirrored = ExtResource("6_7lvf6")
+theme_override_styles/disabled = ExtResource("6_7lvf6")
+theme_override_styles/hover_pressed_mirrored = ExtResource("7_w8pa6")
+theme_override_styles/hover_pressed = ExtResource("7_w8pa6")
+theme_override_styles/hover_mirrored = ExtResource("7_w8pa6")
+theme_override_styles/hover = ExtResource("7_w8pa6")
+theme_override_styles/pressed_mirrored = ExtResource("5_s2h5o")
+theme_override_styles/pressed = ExtResource("5_s2h5o")
+theme_override_styles/normal_mirrored = ExtResource("8_0j485")
+theme_override_styles/normal = ExtResource("8_0j485")
+icon = ExtResource("9_ftvg5")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_w0csi")
+
+[node name="AnimationComponent" type="Node" parent="BackButton"]
+script = ExtResource("11_810vc")
+metadata/_custom_type_script = "uid://o1x71hr7b1nq"
