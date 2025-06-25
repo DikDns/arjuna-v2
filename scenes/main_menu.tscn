@@ -1,9 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cw55udcyxon3c"]
+[gd_scene load_steps=25 format=3 uid="uid://cw55udcyxon3c"]
 
+[ext_resource type="Script" uid="uid://b1obj7bblt54b" path="res://scripts/main_menu.gd" id="1_1dfpl"]
 [ext_resource type="Script" uid="uid://bxnhm241j2hsx" path="res://scripts/materi_button.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://cwq7d4tnsck1p" path="res://assets/background.jpg" id="1_lgwnu"]
 [ext_resource type="Script" uid="uid://2yeto6ahdk8n" path="res://scripts/back_button.gd" id="1_qdaa4"]
-[ext_resource type="Script" uid="uid://c14f3plppvqbx" path="res://scripts/kuis_button.gd" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://cu0mdfg6hvrwa" path="res://assets/bg-main-menu.png" id="2_flqon"]
 [ext_resource type="StyleBox" uid="uid://ceyh2goedo8km" path="res://assets/transparent.tres" id="2_rcqid"]
 [ext_resource type="Script" uid="uid://bfgus0serbkxk" path="res://scripts/game_button.gd" id="3_wu84c"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://85xgcm5tr57i" path="res://assets/button-kuis-hover.png" id="10_gw5y6"]
 [ext_resource type="Texture2D" uid="uid://cfwu83jgdjk8o" path="res://assets/button-game.png" id="12_svtp6"]
 [ext_resource type="Texture2D" uid="uid://8pqaebhqycdd" path="res://assets/button-game-pressed.png" id="13_1dfpl"]
+[ext_resource type="Script" uid="uid://m4j8yjsbpb14" path="res://scenes/kuis_start.tres.gd" id="13_qywvv"]
 [ext_resource type="Texture2D" uid="uid://c38v8qt6ap0p3" path="res://assets/button-game-hover.png" id="14_qywvv"]
 
 [node name="Control" type="Control"]
@@ -31,6 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1dfpl")
 
 [node name="bg2" type="ColorRect" parent="."]
 layout_mode = 1
@@ -119,7 +121,7 @@ texture_pressed = ExtResource("9_8egab")
 texture_hover = ExtResource("10_gw5y6")
 texture_focused = ExtResource("9_8egab")
 stretch_mode = 5
-script = ExtResource("2_bqqt6")
+script = ExtResource("13_qywvv")
 
 [node name="AnimationComponent" type="Node" parent="PanelContainer/VBoxContainer/HBoxContainer2/TextureButton2"]
 script = ExtResource("8_1dfpl")

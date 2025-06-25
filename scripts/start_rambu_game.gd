@@ -1,6 +1,7 @@
 extends Button
 
 func _ready():
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.MAIN)
 	# Hubungkan sinyal pressed dengan fungsi _on_pressed
 	pressed.connect(_on_pressed)
 
@@ -8,7 +9,6 @@ func _ready():
 	var best_time = Global.load_data("best_time_rambu")
 	if best_time:
 		var seconds = float(best_time) / 1000.0
-		# Perbarui label rekor tercepat
 		var label_skor = $"../HBoxContainer/BestTimePanel/BestTimeLabel"
 		label_skor.text = "%0.2f detik" % seconds
 

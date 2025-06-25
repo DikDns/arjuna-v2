@@ -479,7 +479,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 32
 
-[node name="Label2" type="Label" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="MusicLabel" type="Label" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.101961, 0.196078, 0.309804, 1)
@@ -488,7 +488,7 @@ theme_override_font_sizes/font_size = 32
 text = "Musik"
 vertical_alignment = 1
 
-[node name="CheckButton" type="CheckButton" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="MusicButton" type="CheckButton" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_icons/checked = ExtResource("23_b1pjr")
 theme_override_icons/unchecked = ExtResource("24_71xtm")
@@ -499,7 +499,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 32
 
-[node name="Label3" type="Label" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="DisabilitasLabel" type="Label" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.101961, 0.196078, 0.309804, 1)
@@ -508,7 +508,7 @@ theme_override_font_sizes/font_size = 32
 text = "Mode Disabilitas"
 vertical_alignment = 1
 
-[node name="CheckButton" type="CheckButton" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="DisabilitasButton" type="CheckButton" parent="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_icons/checked = ExtResource("23_b1pjr")
 theme_override_icons/unchecked = ExtResource("24_71xtm")
@@ -536,4 +536,5 @@ script = ExtResource("12_71xtm")
 metadata/_custom_type_script = "uid://o1x71hr7b1nq"
 
 [connection signal="pressed" from="HBoxContainer/Panel3/SettingsButton" to="." method="_settings_button_pressed"]
+[connection signal="toggled" from="SettingsPanel/PopUpContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/MusicButton" to="." method="_on_music_button_toggled"]
 [connection signal="pressed" from="SettingsPanel/PopUpContainer/Panel/XButton" to="." method="_x_button_pressed"]

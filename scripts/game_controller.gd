@@ -15,10 +15,8 @@ func _ready() -> void:
 	current_gui_scene = $GUI/MateriMenu
 
 func change_gui_scene(new_scene: String, materi_type: Global.MATERI_TYPE, section_or_delete = true, keep_running = false) -> void:
-	print("current_gui_scene")
-	print(current_gui_scene)
 	current_materi_type = materi_type
-	
+
 	# Check if section_or_delete is a string (section name) or boolean (delete flag)
 	var delete = true
 	if section_or_delete is String:

@@ -44,7 +44,8 @@ func _ready():
 	# Tunggu satu frame agar posisi item sudah benar
 	await get_tree().process_frame
 
-	# Simpan posisi awal item untuk kembalikan jika tidak cocok
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.PHBGAME)
+
 	for item_info in item_data:
 		var item = item_container.get_node(NodePath(item_info.name))
 		if item:
@@ -58,7 +59,6 @@ func _ready():
 			item.set_meta("type", item_info.type)
 			item.set_meta("shape", item_info.shape)
 
-	# Simpan informasi bentuk pada container target
 	for i in range(1, 6):
 		# Untuk container healty
 		var healty_item_name = "healty-" + str(i)
@@ -84,10 +84,7 @@ func _ready():
 	start_time = Time.get_ticks_msec()
 
 	# Cek apakah ada waktu terbaik yang tersimpan
-	best_time = Global.load_data("best_time_perilaku_sehat", 999999)
-
-	print('best time: ' + str(best_time))
-
+	best_time = Global.load_data("best_time_perilaku_hidup_sehat", 999999)
 	restart_button.pressed.connect(_on_restart_button_pressed)
 
 # Fungsi untuk memperbarui timer
@@ -97,85 +94,111 @@ func _process(_delta):
 		var seconds = current_time / 1000.0
 		timer_label.text = "%0.2f" % seconds
 
-# Fungsi untuk menangani input mouse
+# Fungsi untuk menangani input mouse dan touch
 func _input(event):
 	if game_finished:
 		return
 
+	# Handle mouse input
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				# Cek apakah klik pada item
-				for item_info in item_data:
-					var item_name = item_info.name
-					var item = item_container.get_node(NodePath(item_name))
-					if item and item.get_global_rect().has_point(event.global_position):
-						dragged_item = item
-						drag_offset = event.global_position - item.global_position
-						# Bawa item yang di-drag ke depan
-						item.z_index = 1
-						break
+				_handle_touch_down(event.global_position)
 			else: # Mouse dilepas
-				if dragged_item:
-					# Reset z-index
-					dragged_item.z_index = 0
-
-					# Cek apakah item dilepas di atas container yang benar
-					var matched = false
-
-					# Cari slot yang sesuai berdasarkan nama item
-					var slot_name = dragged_item.name
-					var target_slot = descriptions_group.get_node(NodePath(slot_name))
-
-					if target_slot:
-						# Cek apakah item dan slot bersinggungan
-						var item_rect = dragged_item.get_global_rect()
-						var slot_rect = target_slot.get_global_rect()
-
-						if item_rect.intersects(slot_rect):
-							# Posisikan item di dalam slot
-							var parent = dragged_item.get_parent()
-							parent.remove_child(dragged_item)
-							target_slot.add_child(dragged_item)
-
-							# Reset ukuran dan properti tampilan
-							dragged_item.scale = Vector2(0.00005, 0.00005)
-
-							dragged_item.global_position = Vector2(target_slot.global_position.x + 40, target_slot.global_position.y + 45)
-							# Nonaktifkan interaksi dengan item ini
-							dragged_item.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-							# Tandai sebagai cocok
-							matched = true
-							correct_count += 1
-
-							# Cek apakah semua item sudah cocok
-							if correct_count >= item_data.size():
-								game_finished = true
-								show_result()
-								return
-
-					if !matched:
-						# Kembalikan item ke posisi awal dengan animasi halus
-						var tween = create_tween()
-						tween.tween_property(dragged_item, "global_position", original_positions[dragged_item.name], 0.2)
-
-					dragged_item = null
+				_handle_touch_up(event.global_position)
 
 	elif event is InputEventMouseMotion:
 		if dragged_item:
-			dragged_item.global_position = event.global_position - drag_offset
+			_handle_touch_move(event.global_position)
+	
+	# Handle touch screen input
+	elif event is InputEventScreenTouch:
+		if event.pressed:
+			_handle_touch_down(event.position)
+		else:
+			_handle_touch_up(event.position)
+	
+	elif event is InputEventScreenDrag:
+		if dragged_item:
+			_handle_touch_move(event.position)
+
+# Fungsi untuk menangani sentuhan awal (touch down)
+func _handle_touch_down(position):
+	# Cek apakah sentuhan pada item
+	for item_info in item_data:
+		var item_name = item_info.name
+		var item = item_container.get_node(NodePath(item_name))
+		if item and item.get_global_rect().has_point(position):
+			dragged_item = item
+			drag_offset = position - item.global_position
+			# Bawa item yang di-drag ke depan
+			item.z_index = 1
+			break
+
+# Fungsi untuk menangani pergerakan sentuhan (touch move)
+func _handle_touch_move(position):
+	dragged_item.global_position = position - drag_offset
+
+# Fungsi untuk menangani sentuhan dilepas (touch up)
+func _handle_touch_up(position):
+	if dragged_item:
+		# Reset z-index
+		dragged_item.z_index = 0
+
+		# Cek apakah item dilepas di atas container yang benar
+		var matched = false
+
+		# Cari slot yang sesuai berdasarkan nama item
+		var slot_name = dragged_item.name
+		var target_slot = descriptions_group.get_node(NodePath(slot_name))
+
+		if target_slot:
+			# Cek apakah item dan slot bersinggungan
+			var item_rect = dragged_item.get_global_rect()
+			var slot_rect = target_slot.get_global_rect()
+
+			if item_rect.intersects(slot_rect):
+				AudioPlayer.play_sfx_type("correct")
+				# Posisikan item di dalam slot
+				var parent = dragged_item.get_parent()
+				parent.remove_child(dragged_item)
+				target_slot.add_child(dragged_item)
+
+				# Reset ukuran dan properti tampilan
+				dragged_item.scale = Vector2(0.00005, 0.00005)
+
+				dragged_item.global_position = Vector2(target_slot.global_position.x + 40, target_slot.global_position.y + 45)
+				# Nonaktifkan interaksi dengan item ini
+				dragged_item.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+				# Tandai sebagai cocok
+				matched = true
+				correct_count += 1
+
+				# Cek apakah semua item sudah cocok
+				if correct_count >= item_data.size():
+					game_finished = true
+					show_result()
+					return
+
+		if !matched:
+			# Kembalikan item ke posisi awal dengan animasi halus
+			var tween = create_tween()
+			tween.tween_property(dragged_item, "global_position", original_positions[dragged_item.name], 0.2)
+
+		dragged_item = null
 
 # Fungsi untuk menampilkan hasil
 func show_result():
-	# Hitung waktu akhir
+	AudioPlayer.play_sfx_type("success")
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.MAIN)
+
 	var final_time = current_time / 1000.0
 
 	# Cek apakah ini waktu terbaik
 	if current_time < best_time:
 		best_time = current_time
-		print('best time: ' + str(best_time))
-		Global.save_data("best_time_perilaku_sehat", best_time)
+		Global.save_data("best_time_perilaku_hidup_sehat", best_time)
 
 	# Tampilkan panel hasil
 	current_time_label.text = "%0.2f detik" % final_time
@@ -213,4 +236,5 @@ func restart_game():
 
 # Fungsi untuk memulai ulang permainan
 func _on_restart_button_pressed():
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.PHBGAME)
 	restart_game()

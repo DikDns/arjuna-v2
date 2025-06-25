@@ -22,11 +22,7 @@ func add_scene(scene: String):
 # Fungsi untuk menyimpan data ke file
 # Di fungsi save_data
 func save_data(key: String, value) -> void:
-	print('save data dipanggil untuk key: ' + key + ' dengan nilai: ' + str(value))
 	var config = ConfigFile.new()
-
-	# Print path untuk debugging
-	print("Saving to path: ", ProjectSettings.globalize_path(save_path))
 
 	# Muat file konfigurasi jika sudah ada
 	if FileAccess.file_exists(save_path):

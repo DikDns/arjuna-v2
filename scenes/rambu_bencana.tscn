@@ -31,9 +31,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -274.674
-offset_top = -60.0
+offset_top = -52.0
 offset_right = 299.674
-offset_bottom = 73.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.895, 0.895)
@@ -231,6 +231,7 @@ metadata/_custom_type_script = "uid://o1x71hr7b1nq"
 
 [node name="BackButton" type="Button" parent="."]
 texture_filter = 4
+layout_mode = 0
 offset_left = 32.0
 offset_top = 32.0
 offset_right = 96.0

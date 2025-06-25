@@ -43,8 +43,6 @@ func load_materi_data() -> void:
 
 	# Get the contents array for the current section
 	contents = materi_data[current_section]["contents"]
-	
-	print(contents)
 
 # Setup the scene with the loaded data
 func setup_scene() -> void:

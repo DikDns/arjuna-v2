@@ -31,7 +31,6 @@ func _ready():
 	# Simpan posisi awal untuk efek gempa
 	for child in get_children():
 		if child is TextureRect:
-			print("Found TextureRect: ", child.name)
 			# Untuk TextureRect, kita perlu menggunakan global_position
 			original_positions[child.name] = child.global_position
 
@@ -70,6 +69,7 @@ func setup_scene(scene_type: String) -> void:
 
 # Fungsi untuk memulai permainan
 func start_game():
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.SGAME)
 	timer = 30.0
 	game_active = true
 	children_safe = 0
@@ -123,22 +123,15 @@ func _input(event):
 				var anak1_rect = anak1.get_global_rect()
 				var anak2_rect = anak2.get_global_rect()
 
-				print("Mouse position: ", mouse_pos)
-				print("Anak1 rect: ", anak1_rect)
-				print("Anak1 position: ", anak1.global_position)
-
 				if anak1_rect.has_point(mouse_pos):
 					dragging_child = anak1
 					drag_offset = mouse_pos - anak1.global_position
-					print("Mulai drag Anak1")
 				elif anak2_rect.has_point(mouse_pos):
 					dragging_child = anak2
 					drag_offset = mouse_pos - anak2.global_position
-					print("Mulai drag Anak2")
 			else:
 				# Lepas anak
 				if dragging_child:
-					print("Lepas drag anak")
 					# Cek apakah anak berada di tempat aman
 					check_safe_place()
 					dragging_child = null
@@ -187,15 +180,11 @@ func check_safe_place():
 			var safe_rect = safe_node.get_global_rect()
 			var child_rect = dragging_child.get_global_rect()
 
-			print("Safe place: ", safe_place)
-			print("Safe rect: ", safe_rect)
-			print("Child rect: ", child_rect)
-
 			# Cek apakah area anak bersinggungan dengan area tempat aman
 			if safe_rect.intersects(child_rect):
+				AudioPlayer.play_sfx_type("correct")
 				# Anak berada di tempat aman
 				var child_name = dragging_child.name
-				print("Anak " + child_name + " berada di tempat aman!")
 				children_safe += 1
 				original_positions[child_name] = safe_node.global_position
 
@@ -209,9 +198,12 @@ func end_game(success):
 	game_active = false
 
 	if success:
+		AudioPlayer.play_sfx_type("success")
+		AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.MAIN)
+
 		$ResultPanel/Panel/TextureRect.visible = true
 		$ResultPanel/Panel/Heading.visible = true
-		
+
 		# Simpan waktu terbaik
 		if best_time == 0 or timer > best_time:
 			best_time = timer
@@ -222,6 +214,9 @@ func end_game(success):
 		$ResultPanel/Panel/HBoxContainer/CurrentTimePanel/CurrentTimeLabel.text = str(snapped(timer, 0.01)) + " detik."
 		$ResultPanel/Panel/HBoxContainer/BestTimePanel/BestTimeLabel.text = str(snapped(best_time, 0.01)) + " detik"
 	else:
+		AudioPlayer.play_sfx_type("fail")
+		AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.MATERI)
+
 		$ResultPanel/Panel/TextureRect.visible = false
 		$ResultPanel/Panel/HBoxContainer.visible = false
 		# Tampilkan hasil gagal

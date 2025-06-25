@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():	
-	var best_time = Global.load_data("best_time_perilak_hidup_sehat")
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.MAIN)
+	var best_time = Global.load_data("best_time_perilaku_hidup_sehat")
 	if best_time:
 		var seconds = float(best_time) / 1000.0
 		# Perbarui label rekor tercepat

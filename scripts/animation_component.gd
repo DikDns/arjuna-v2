@@ -64,6 +64,7 @@ func _on_parent_mouse_exited():
 
 
 func _on_parent_button_down():
+	AudioPlayer.play_sfx_type("click")
 	play_pressed_animation()
 
 

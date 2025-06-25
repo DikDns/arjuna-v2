@@ -45,6 +45,8 @@ func _ready():
 	# Tunggu satu frame agar posisi rambu sudah benar
 	await get_tree().process_frame
 
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.RGAME)
+
 	# Simpan posisi awal rambu untuk kembalikan jika tidak cocok
 	for rambu in rambu_container.get_children():
 		original_positions[rambu.name] = rambu.global_position
@@ -57,8 +59,6 @@ func _ready():
 	# Cek apakah ada waktu terbaik yang tersimpan
 	best_time = Global.load_data("best_time_rambu", 999999)
 
-	print('best time: ' + str(best_time))
-
 	restart_button.pressed.connect(_on_restart_button_pressed)
 
 # Fungsi untuk memperbarui timer
@@ -68,97 +68,124 @@ func _process(_delta):
 		var seconds = current_time / 1000.0
 		timer_label.text = "%0.2f" % seconds
 
-# Fungsi untuk menangani input mouse
+# Fungsi untuk menangani input mouse dan touch
 func _input(event):
 	if game_finished:
 		return
 
+	# Handle mouse input
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				# Cek apakah klik pada rambu
-				for rambu in rambu_container.get_children():
-					if rambu.get_global_rect().has_point(event.global_position):
-						dragged_rambu = rambu
-						drag_offset = event.global_position - rambu.global_position
-						# Bawa rambu yang di-drag ke depan
-						rambu.z_index = 1
-						break
+				_handle_touch_down(event.global_position)
 			else: # Mouse dilepas
-				if dragged_rambu:
-					# Reset z-index
-					dragged_rambu.z_index = 0
-
-					# Cek apakah rambu dilepas di atas deskripsi yang benar
-					var matched = false
-
-					# Dapatkan nama rambu yang sedang di-drag
-					var rambu_name = dragged_rambu.name
-
-					# Cek setiap container deskripsi
-					for container in description_container.get_children():
-						# Cek apakah ini container yang sesuai dengan rambu
-						# Perlu menyesuaikan nama rambu dengan nama panel deskripsi
-						var match_found = false
-
-						# Periksa apakah ini adalah pasangan yang cocok
-						if (rambu_name == container.name):
-							match_found = true
-
-						if match_found:
-							# Ambil rambu_slot dari container deskripsi
-							var rambu_slot = container.get_node("RambuSlot")
-
-							# Cek apakah rambu dan container bersinggungan
-							var rambu_rect = dragged_rambu.get_global_rect()
-							var rambu_slot_rect = rambu_slot.get_global_rect()
-
-							if rambu_rect.intersects(rambu_slot_rect):
-								# Posisikan rambu di dalam rambu_slot
-								var parent = dragged_rambu.get_parent()
-								parent.remove_child(dragged_rambu)
-								container.add_child(dragged_rambu)
-
-								# Atur posisi rambu agar berada di posisi yang sama dengan rambu slot
-								# Pastikan rambu berada tepat di atas rambu slot dengan menyesuaikan posisi
-								dragged_rambu.global_position = rambu_slot.global_position
-								dragged_rambu.scale = Vector2(1.2, 1.2)
-								# Tandai sebagai cocok
-								matched = true
-								correct_count += 1
-
-								# Cek apakah semua rambu sudah cocok
-								if correct_count >= rambu_data.size():
-									game_finished = true
-									show_result()
-								break
-
-					if !matched:
-						# Kembalikan rambu ke posisi awal dengan animasi halus
-						var tween = create_tween()
-						tween.tween_property(dragged_rambu, "global_position", original_positions[dragged_rambu.name], 0.2)
-
-					dragged_rambu = null
+				_handle_touch_up(event.global_position)
 
 	elif event is InputEventMouseMotion:
 		if dragged_rambu:
-			dragged_rambu.global_position = event.global_position - drag_offset
+			_handle_touch_move(event.global_position)
+	
+	# Handle touch screen input
+	elif event is InputEventScreenTouch:
+		if event.pressed:
+			_handle_touch_down(event.position)
+		else:
+			_handle_touch_up(event.position)
+	
+	elif event is InputEventScreenDrag:
+		if dragged_rambu:
+			_handle_touch_move(event.position)
+
+# Fungsi untuk menangani sentuhan awal (touch down)
+func _handle_touch_down(position):
+	# Cek apakah sentuhan pada rambu
+	for rambu in rambu_container.get_children():
+		if rambu.get_global_rect().has_point(position):
+			dragged_rambu = rambu
+			drag_offset = position - rambu.global_position
+			# Bawa rambu yang di-drag ke depan
+			rambu.z_index = 1
+			break
+
+# Fungsi untuk menangani pergerakan sentuhan (touch move)
+func _handle_touch_move(position):
+	dragged_rambu.global_position = position - drag_offset
+
+# Fungsi untuk menangani sentuhan dilepas (touch up)
+func _handle_touch_up(position):
+	if dragged_rambu:
+		# Reset z-index
+		dragged_rambu.z_index = 0
+
+		# Cek apakah rambu dilepas di atas deskripsi yang benar
+		var matched = false
+
+		# Dapatkan nama rambu yang sedang di-drag
+		var rambu_name = dragged_rambu.name
+
+		# Cek setiap container deskripsi
+		for container in description_container.get_children():
+			# Cek apakah ini container yang sesuai dengan rambu
+			# Perlu menyesuaikan nama rambu dengan nama panel deskripsi
+			var match_found = false
+
+			# Periksa apakah ini adalah pasangan yang cocok
+			if (rambu_name == container.name):
+				match_found = true
+
+
+			if match_found:
+				# Ambil rambu_slot dari container deskripsi
+				var rambu_slot = container.get_node("RambuSlot")
+
+				# Cek apakah rambu dan container bersinggungan
+				var rambu_rect = dragged_rambu.get_global_rect()
+				var rambu_slot_rect = rambu_slot.get_global_rect()
+
+				if rambu_rect.intersects(rambu_slot_rect):
+					AudioPlayer.play_sfx_type("correct")
+					var parent = dragged_rambu.get_parent()
+					parent.remove_child(dragged_rambu)
+					container.add_child(dragged_rambu)
+
+					# Atur posisi rambu agar berada di posisi yang sama dengan rambu slot
+					# Pastikan rambu berada tepat di atas rambu slot dengan menyesuaikan posisi
+					dragged_rambu.global_position = rambu_slot.global_position
+					dragged_rambu.scale = Vector2(1.2, 1.2)
+					# Tandai sebagai cocok
+					matched = true
+					correct_count += 1
+
+					# Cek apakah semua rambu sudah cocok
+					if correct_count >= rambu_data.size():
+						game_finished = true
+						show_result()
+					break
+
+		if !matched:
+			# Kembalikan rambu ke posisi awal dengan animasi halus
+			var tween = create_tween()
+			tween.tween_property(dragged_rambu, "global_position", original_positions[dragged_rambu.name], 0.2)
+
+		dragged_rambu = null
 
 # Fungsi untuk menampilkan hasil
 func show_result():
+	AudioPlayer.play_sfx_type("success")
+	AudioPlayer.play_bgm(AudioPlayer.BGM_TYPE.MAIN)
+
 	# Hitung waktu akhir
 	var final_time = current_time / 1000.0
 
 	# Cek apakah ini waktu terbaik
 	if current_time < best_time:
 		best_time = current_time
-		print('best time: ' + str(best_time))
 		Global.save_data("best_time_rambu", best_time)
 
 	# Tampilkan panel hasil
 	result_label.text = "Kamu berhasil menyelesaikan permainan."
-	current_time_label.text = "%0.2f" % final_time
-	best_time_label.text = "%0.2f" % (best_time / 1000.0)
+	current_time_label.text = "%0.2f detik" % final_time
+	best_time_label.text = "%0.2f detik" % (best_time / 1000.0)
 	result_panel.visible = true
 
 # Fungsi untuk memulai ulang permainan
